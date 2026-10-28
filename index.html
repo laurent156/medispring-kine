@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Aperçu page kinés</title>
+<!-- APERÇU LOCAL : charge les polices et images comme sur le site. Ne pas coller dans Odoo : utiliser kine-odoo.html -->
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Asap:wght@300;400;500;600;700&display=swap">
+<style>
+@font-face{font-family:'Omnes Pro';src:url('fonts/Omnes%20Bold.otf') format('opentype');font-weight:700;font-style:normal}
+@font-face{font-family:'Omnes Pro';src:url('fonts/Omnes%20Medium.otf') format('opentype');font-weight:500;font-style:normal}
+body{margin:0;background:#fff}
+</style></head><body>
+<!--
+==========================================================================
+ MEDISPRING · PAGE KINÉSITHÉRAPEUTES · CODE POUR ODOO
+ À coller dans un bloc « Code intégré » (Embed Code) de l'éditeur de site.
+
+ AVANT DE COLLER
+ 1. Importer les 7 fichiers du dossier images/ dans la médiathèque d'Odoo,
+    puis remplacer dans ce fichier chaque  images/xxx  par l'URL Odoo
+    (voir la liste en bas du fichier).
+ 2. Dans l'éditeur, régler le bloc « Code intégré » sur PLEINE LARGEUR
+    (option Largeur du conteneur), sinon les bandes de couleur
+    ne vont pas jusqu'aux bords de l'écran.
+ 3. Créer la page de remerciement /merci-demande-kine.
+ 4. Tester les 2 formulaires avec un faux lead (voir « TEST » en bas).
+
+ Le menu et le pied de page restent ceux d'Odoo.
+ Les polices ne sont pas chargées ici : les titres prennent Omnes Pro
+ et le texte Asap, hérités du site.
+==========================================================================
+-->
+
+<style>
+/* ---------- base, limitée à la page ---------- */
+.mk, .mk *{box-sizing:border-box}
+.mk{font-family:'Asap',-apple-system,'Segoe UI',sans-serif;color:#212529;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.mk h1,.mk h2,.mk h3,.mk h4,.mk-stat b,.mk-faq summary{font-family:'omnes-pro','Omnes Pro','Asap',-apple-system,'Segoe UI',sans-serif}
+.mk h1,.mk h2,.mk h3,.mk h4{font-weight:700;margin:0;color:#212529;text-wrap:balance}
+.mk p{margin:0}
+.mk img{max-width:100%}
+.mk a{color:#0F3E03}
+.mk-wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+.mk-sec{padding-top:96px;padding-bottom:104px}
+.mk-col{display:flex;flex-direction:column}
+.mk .mk-h2{font-size:2.5rem;line-height:1.1}
+.mk .mk-h3{font-size:2rem;line-height:1.2}
+.mk .mk-lead{font-size:1.1rem;color:rgba(33,37,41,.7);max-width:640px}
+.mk-mist{background:#F8F7F6}
+
+/* ---------- boutons (pilule, texte non gras) ---------- */
+.mk a.mk-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:42px;padding:8px 20px;border-radius:6.25rem;border:1px solid transparent;font-size:1rem;font-weight:400;line-height:1;text-decoration:none;cursor:pointer;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out}
+.mk a.mk-btn-p{background:#0F3E03;color:#fff;border-color:#0F3E03}
+.mk a.mk-btn-p:hover{background:#0D3503;border-color:#0C3202;color:#fff}
+.mk a.mk-btn-s{background:#D5EC7B;color:#212529;border-color:#D5EC7B}
+.mk a.mk-btn-s:hover{background:#DBEF8F;border-color:#D9EE88;color:#212529}
+.mk a.mk-btn-o{background:transparent;color:#0F3E03;border-color:#0F3E03}
+.mk a.mk-btn-o:hover{background:#FBFFF1;color:#0F3E03}
+.mk a.mk-btn-ow{background:transparent;color:#fff;border-color:#fff}
+.mk a.mk-btn-ow:hover{background:rgba(255,255,255,.12);color:#fff}
+.mk a.mk-lnk{color:#0F3E03;text-decoration:underline;text-underline-offset:3px}
+.mk-bdg{display:inline-flex;align-items:center;align-self:flex-start;background:#D5EC7B;color:#212529;font-size:.85rem;padding:5px 14px;border-radius:6.25rem}
+
+/* ---------- listes à coche ---------- */
+.mk-ck{display:flex;gap:12px;align-items:flex-start}
+.mk-ck img{width:26px;height:26px;flex:none;border-radius:4px}
+
+/* ---------- hero et bandes sombres ---------- */
+.mk-hero{background:linear-gradient(167deg,#0F3E03 62%,#628415 100%);color:#fff}
+.mk .mk-hero h1{color:#fff;font-size:3rem;line-height:1.1}
+.mk-lm{color:#D5EC7B}
+
+/* ---------- formulaires ---------- */
+.mk-fcard{background:#fff;border-radius:.4rem;padding:32px;box-shadow:0 18px 48px rgba(0,0,0,.22);color:#212529}
+.mk .mk-fcard h2{font-size:1.5rem;line-height:1.25}
+.mk-rows{display:flex;flex-direction:column;gap:16px}
+.mk-fld label{display:block;font-size:.85rem;font-weight:500;margin:0 0 6px;color:inherit}
+.mk-fld input[type=text],.mk-fld input[type=email],.mk-fld input[type=tel],.mk-fld select{display:block;width:100%;height:42px;padding:8px 20px;border:1px solid rgba(33,37,41,.15);border-radius:.4rem;font:inherit;font-size:1rem;background:#fff;color:#212529;box-shadow:none}
+.mk-fld input:focus-visible,.mk-fld select:focus-visible{outline:2px solid #0F3E03;outline-offset:2px}
+.mk-rp{display:flex;gap:8px}
+.mk-rp label{flex:1;position:relative;margin:0}
+.mk-rp input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.mk-rp span{display:flex;align-items:center;justify-content:center;height:42px;border-radius:6.25rem;border:1px solid #0F3E03;color:#0F3E03;font-size:1rem}
+.mk-rp input:checked + span{background:#0F3E03;color:#fff}
+.mk-rp input:focus-visible + span{outline:2px solid #0F3E03;outline-offset:2px}
+.mk-submit a{width:100%}
+.mk-note{font-size:.8rem;color:rgba(33,37,41,.55);text-align:center}
+
+/* ---------- cartes ---------- */
+.mk-card{background:#fff;border:1px solid #EFEFEF;border-radius:.4rem;padding:24px}
+.mk .mk-card h4{font-size:1.25rem;line-height:1.25}
+.mk-card p{font-size:.95rem;color:rgba(33,37,41,.7)}
+.mk-ico{width:44px;height:44px;border-radius:9px;display:block}
+.mk-stat b{display:block;font-size:2rem;line-height:1.1;color:#0F3E03;font-weight:700}
+.mk-stat span{font-size:.95rem;color:rgba(33,37,41,.7)}
+.mk-lime{background:#D5EC7B;border-radius:.4rem}
+.mk-imgp img{display:block;width:100%;max-width:452px;height:auto}
+
+/* ---------- citations ---------- */
+.mk-qgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.mk-qcard{background:#0F3E03;color:#fff;border-radius:.4rem;padding:28px;display:flex;flex-direction:column;gap:20px}
+.mk-qcard p{color:#fff;font-size:1rem;line-height:1.55}
+.mk-who{display:flex;gap:12px;align-items:center;margin-top:auto;padding-top:12px}
+.mk-who img{width:48px;height:48px;border-radius:50%;flex:none}
+.mk-who b{display:block;color:#fff;font-weight:700;line-height:1.4}
+.mk-who span{display:block;color:#D5EC7B;line-height:1.4}
+
+/* ---------- FAQ ---------- */
+.mk-faq details{border-bottom:1px solid #EFEFEF;padding:20px 0}
+.mk-faq summary{list-style:none;display:flex;justify-content:space-between;gap:16px;font-size:1.15rem;font-weight:500;color:#0F3E03;cursor:pointer}
+.mk-faq summary::-webkit-details-marker{display:none}
+.mk-faq summary::after{content:'+';font-size:1.5rem;line-height:1;font-weight:400}
+.mk-faq details[open] summary::after{content:'–'}
+.mk-faq details p{margin-top:12px;color:rgba(33,37,41,.7);max-width:700px}
+
+/* ---------- animation : fondu à l'entrée + survol 0.15s (règle du design system) ---------- */
+@keyframes mk-fade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+/* hero : apparition au chargement, en cascade */
+.mk-hero > .mk-wrap > .mk-col > *, #ms-hero-form{animation:mk-fade .6s ease-out both}
+.mk-hero > .mk-wrap > .mk-col > :nth-child(2){animation-delay:.08s}
+.mk-hero > .mk-wrap > .mk-col > :nth-child(3){animation-delay:.16s}
+.mk-hero > .mk-wrap > .mk-col > :nth-child(4){animation-delay:.24s}
+.mk-hero > .mk-wrap > .mk-col > :nth-child(n+5){animation-delay:.32s}
+#ms-hero-form{animation-delay:.2s}
+/* sections : fondu à l'apparition dans l'écran (script en bas de page).
+   Sans le script, tout reste visible. */
+.mk-js .mk-rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease-out,transform .7s ease-out}
+.mk-js .mk-rv.mk-in{opacity:1;transform:none}
+/* survol des cartes */
+.mk-card,.mk-qcard{transition:transform .15s ease-in-out,box-shadow .15s ease-in-out}
+.mk-card:hover,.mk-qcard:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(15,62,3,.12)}
+@media (prefers-reduced-motion:reduce){
+  .mk *, #ms-hero-form{animation:none !important;transition:none !important}
+  .mk-js .mk-rv{opacity:1;transform:none}
+  .mk-card:hover,.mk-qcard:hover{transform:none}
+}
+
+/* ---------- petits écrans ---------- */
+@media (max-width:767px){
+  .mk-wrap{padding:0 20px}
+  .mk-sec{padding-top:56px;padding-bottom:64px}
+  .mk .mk-hero h1{font-size:2rem}
+  .mk .mk-h2{font-size:1.75rem}
+  .mk .mk-h3{font-size:1.5rem}
+  .mk-fcard{padding:24px}
+  .mk-qgrid{grid-template-columns:1fr}
+  .mk-lime{padding:32px 24px !important}
+}
+@media (prefers-reduced-motion:reduce){ .mk a.mk-btn{transition:none} }
+</style>
+
+<div class="mk">
+
+<!-- ===================== B · HERO ===================== -->
+<section class="mk-hero"><div class="mk-wrap mk-sec" style="display:flex;flex-wrap:wrap;gap:48px 64px;align-items:center">
+<div class="mk-col" style="flex:1 1 520px;min-width:0;gap:24px">
+<span class="mk-bdg">Medispring Physio · Moins d'admin, plus de soin.</span>
+<h1>Kinés&nbsp;: soyez prêts pour l'eSanté 2027, <span class="mk-lm">sans y passer vos soirées.</span></h1>
+<p style="font-size:1.15rem;line-height:1.5;color:rgba(255,255,255,.86);max-width:540px">Medispring Physio gère l'administratif à votre place&nbsp;: prescriptions, séances, facturation électronique, eAgreement et agenda. En solo, en pratique de groupe ou en maison médicale.</p>
+<div class="mk-col" style="gap:10px;font-size:1.05rem">
+<div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span>Facturation automatisée jusqu'aux organismes assureurs</span></div>
+<div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span>Contrat actuel repris&nbsp;: <strong>jusqu'à 9 mois offerts</strong></span></div>
+<div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span><strong>Migration incluse</strong>, sans frais supplémentaires</span></div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:4px">
+<a class="mk-btn mk-btn-s" href="#ms-devis">Calculer mon devis</a>
+<a class="mk-btn mk-btn-ow" href="#ms-hero-form">Réserver une démo</a>
+</div>
+<div style="font-size:.95rem;color:rgba(255,255,255,.8)">Ou appelez-nous&nbsp;: <a href="tel:+3281280117" style="color:#fff;font-weight:700;text-decoration:none">+32 81 28 01 17</a> · lun–ven, 8h30–12h30 et 13h15–17h30</div>
+</div>
+
+<!-- FORMULAIRE DU HERO : même structure que le formulaire Odoo actuel de la page.
+     À TESTER. Si l'envoi ne crée pas de lead, supprimer ce <form> et mettre à la place
+     un bloc natif « Formulaire » d'Odoo dans une colonne à droite du hero. -->
+<div id="ms-hero-form" class="mk-fcard mk-col" style="flex:0 1 440px;min-width:0;width:100%;gap:16px">
+<h2>Parlez à un conseiller</h2>
+<p style="font-size:.95rem;color:rgba(33,37,41,.7)">Laissez vos coordonnées. Un conseiller Medispring vous rappelle ou planifie votre démo.</p>
+<form action="/website/form/" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" data-pre-fill="true" data-model_name="crm.lead" data-success-mode="redirect" data-success-page="/merci-demande-kine">
+<div class="s_website_form_rows mk-rows">
+<div class="s_website_form_field mk-fld" data-type="char" data-name="Field">
+<div class="mk-rp s_website_form_multiple" data-name="name" data-display="horizontal">
+<label><input type="radio" class="s_website_form_input" name="name" value="Kiné : être rappelé" checked required><span>Être rappelé</span></label>
+<label><input type="radio" class="s_website_form_input" name="name" value="Kiné : réserver une démo"><span>Réserver une démo</span></label>
+</div>
+</div>
+<div class="s_website_form_field s_website_form_required mk-fld" data-type="char" data-name="Field">
+<label class="s_website_form_label" for="mk-nom"><span class="s_website_form_label_content">Nom et prénom</span><span class="s_website_form_mark"> *</span></label>
+<input id="mk-nom" class="s_website_form_input" type="text" name="contact_name" required>
+</div>
+<div class="s_website_form_field s_website_form_required mk-fld" data-type="email" data-name="Field">
+<label class="s_website_form_label" for="mk-mail"><span class="s_website_form_label_content">E-mail</span><span class="s_website_form_mark"> *</span></label>
+<input id="mk-mail" class="s_website_form_input" type="email" name="email_from" required>
+</div>
+<div class="s_website_form_field s_website_form_required mk-fld" data-type="char" data-name="Field">
+<label class="s_website_form_label" for="mk-tel"><span class="s_website_form_label_content">Téléphone</span><span class="s_website_form_mark"> *</span></label>
+<input id="mk-tel" class="s_website_form_input" type="tel" name="phone" required>
+</div>
+<div class="s_website_form_field mk-fld" data-type="char" data-name="Field">
+<label class="s_website_form_label" for="mk-sit"><span class="s_website_form_label_content">Votre situation</span></label>
+<select id="mk-sit" class="s_website_form_input" name="description"><option>Je débute avec l'eSanté</option><option>J'utilise déjà un logiciel</option><option>Je travaille en pratique de groupe</option></select>
+</div>
+<input type="hidden" name="team_id" value="1" class="s_website_form_input">
+<input type="hidden" name="user_id" value="9" class="s_website_form_input">
+<div class="s_website_form_submit mk-submit" data-name="Submit Button">
+<span id="s_website_form_result"></span>
+<a href="#" role="button" class="mk-btn mk-btn-p s_website_form_send">Envoyer ma demande</a>
+</div>
+</div>
+</form>
+<p class="mk-note">En envoyant ce formulaire, vous acceptez notre <a href="/politique-de-vie-privee">politique de vie privée</a>.</p>
+</div>
+</div></section>
+
+<!-- ===================== C · PREUVES ===================== -->
+<section style="background:#fff;border-bottom:1px solid #EFEFEF"><div class="mk-wrap" style="padding-top:40px;padding-bottom:40px;display:flex;flex-wrap:wrap;gap:28px 40px">
+<div class="mk-stat" style="flex:1 1 180px"><b>3&nbsp;000+</b><span>soignants utilisent Medispring au quotidien</span></div>
+<div class="mk-stat" style="flex:1 1 180px"><b>9 mois offerts</b><span>si vous êtes encore lié à un autre DMI</span></div>
+<div class="mk-stat" style="flex:1 1 180px"><b>Migration incluse</b><span>sans frais supplémentaires</span></div>
+<div class="mk-stat" style="flex:1 1 180px"><b>Support en Belgique</b><span>inclus dans la licence</span></div>
+<div class="mk-stat" style="flex:1 1 180px"><b>Coopérative</b><span>indépendante, détenue par les soignants</span></div>
+</div></section>
+
+<!-- ===================== D · LES 4 SERVICES INAMI ===================== -->
+<section id="ms-esante" class="mk-mist"><div class="mk-wrap mk-sec mk-col" style="gap:32px">
+<h2 class="mk-h2" style="color:#0F3E03;max-width:760px">À partir du 1er janvier 2027, l'INAMI demande 4 services eSanté.</h2>
+<p class="mk-lead">Pas besoin de tout maîtriser d'un coup. Medispring vous explique ce que chaque service change pour vous et l'intègre progressivement dans votre quotidien.</p>
+<div style="display:flex;flex-wrap:wrap;gap:20px">
+<div class="mk-card mk-col" style="flex:1 1 240px;min-width:0;gap:12px"><img class="mk-ico" src="images/heart.svg" alt="" width="44" height="44"><h4>eAttest</h4><p>Envoyer l'attestation de soins électroniquement à la mutualité lorsque le patient paie la totalité des honoraires, hors tiers payant.</p></div>
+<div class="mk-card mk-col" style="flex:1 1 240px;min-width:0;gap:12px"><img class="mk-ico" src="images/heart.svg" alt="" width="44" height="44"><h4>eFact</h4><p>Facturer électroniquement à la mutualité lorsqu'on applique le tiers payant.</p></div>
+<div class="mk-card mk-col" style="flex:1 1 240px;min-width:0;gap:12px"><img class="mk-ico" src="images/heart.svg" alt="" width="44" height="44"><h4>eAgreement</h4><p>Envoyer les notifications et demandes d'accord aux médecins-conseils des mutualités, et recevoir leurs accords électroniquement.</p></div>
+<div class="mk-card mk-col" style="flex:1 1 240px;min-width:0;gap:12px"><img class="mk-ico" src="images/heart.svg" alt="" width="44" height="44"><h4>Member Data</h4><p>Consulter les données d'assurabilité du patient&nbsp;: son statut d'assurance et ses droits auprès de la mutualité.</p></div>
+</div>
+<div class="mk-lime" style="padding:24px 28px;font-size:1.1rem">Vous encaissez la totalité des honoraires&nbsp;? C'est l'<strong>eAttest</strong>. Vous appliquez le tiers payant&nbsp;? C'est l'<strong>eFact</strong>.</div>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px">
+<a class="mk-btn mk-btn-p" href="#ms-devis">Calculer mon devis</a>
+<a class="mk-lnk" href="#ms-checklist">Vérifier où j'en suis avec la checklist 2027</a>
+</div>
+</div></section>
+
+<!-- ===================== E · FONCTIONNALITÉS ===================== -->
+<section id="ms-fonctionnalites"><div class="mk-wrap mk-sec mk-col" style="gap:96px">
+<div class="mk-col" style="gap:16px;margin-bottom:-32px"><span class="mk-bdg">Medispring Physio</span><h2 class="mk-h2" style="color:#0F3E03;max-width:760px">Tout votre cabinet de kiné dans un seul outil.</h2><p class="mk-lead">Suivi des séances, facturation électronique et agenda, connectés à l’écosystème e-Santé belge. En solo, en pratique de groupe ou en maison médicale.</p></div>
+
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:40px 72px">
+<div class="mk-imgp" style="flex:1 1 420px;min-width:0"><img src="images/kine-suivi.png" alt="Une kinésithérapeute accompagne une patiente pendant un exercice d'équilibre" width="452" height="417" loading="lazy"></div>
+<div class="mk-col" style="flex:1 1 420px;min-width:0;gap:20px">
+<h3 class="mk-h3">Un suivi patient structuré, séance après séance</h3>
+<p class="mk-lead">Medispring vous donne une vue claire sur chaque traitement en cours, sans avoir à chercher l'information.</p>
+<div class="mk-col" style="gap:10px">
+<div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span>Gestion des prescriptions</span></div>
+<div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span>Vision immédiate sur les <strong>séances restantes</strong>, les bilans à prévoir et les traitements à clôturer</span></div>
+<div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span>Formulaires spécifiques kiné pour un encodage rapide et structuré</span></div>
+<div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span>Ligne du temps complète par patient</span></div>
+<div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span>Documents types prêts à l'emploi</span></div>
+</div>
+<div><a class="mk-btn mk-btn-o" href="#ms-devis">Calculer mon devis</a></div>
+</div>
+</div>
+
+<div style="display:flex;flex-wrap:wrap-reverse;align-items:center;gap:40px 72px">
+<div class="mk-col" style="flex:1 1 420px;min-width:0;gap:20px">
+<h3 class="mk-h3">Une facturation automatisée, un gain de temps réel</h3>
+<p class="mk-lead">En fin de visite, Medispring s'occupe de tout, du décompte des séances à l'envoi aux mutuelles.</p>
+<div class="mk-col" style="gap:10px">
+<div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span>Facturation électronique avec application automatique du <strong>code de nomenclature</strong> adapté</span></div>
+<div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span>Envoi automatisé aux <strong>organismes assureurs</strong></span></div>
+<div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span><strong>eAgreement intégré</strong>&nbsp;: vérification immédiate de l'assurabilité et des accords spécifiques en cours</span></div>
+<div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span>Moins d'erreurs, moins de refus ou de retards de remboursement</span></div>
+</div>
+<div><a class="mk-btn mk-btn-o" href="#ms-hero-form">Réserver une démo</a></div>
+</div>
+<div class="mk-imgp" style="flex:1 1 420px;min-width:0;display:flex;justify-content:flex-end"><img src="images/kine-factu.png" alt="Une kinésithérapeute encode ses séances sur son ordinateur" width="451" height="418" loading="lazy"></div>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:40px 72px">
+<div class="mk-imgp" style="flex:1 1 420px;min-width:0"><img src="images/agenda-cabinet.png" alt="Agenda Medispring : calendrier du mois et planning de la journée" width="452" height="417" loading="lazy"></div>
+<div class="mk-col" style="flex:1 1 420px;min-width:0;gap:20px">
+<h3 class="mk-h3">Agenda, coordination et connexion au réseau de soins</h3>
+<p class="mk-lead">Medispring connecte votre pratique à votre patientèle et à vos confrères, en toute sécurité.</p>
+<div class="mk-col" style="gap:10px">
+<div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span>Agenda en ligne avec <strong>prise de RDV autonome</strong> par le patient</span></div>
+<div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span>Rappels automatiques par mail pour limiter les absences</span></div>
+<div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span>Communication sécurisée avec vos confrères et les réseaux de santé</span></div>
+<div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span>Connexion fluide à l'écosystème e-Santé belge</span></div>
+</div>
+<div><a class="mk-btn mk-btn-o" href="#ms-devis">Calculer mon devis</a></div>
+</div>
+</div>
+
+</div></section>
+
+<!-- ===================== F · CITATIONS (composant du site : grille 2 colonnes, étoiles, pastille ronde) ===================== -->
+<section id="ms-temoignages" class="mk-mist"><div class="mk-wrap mk-sec mk-col" style="gap:32px">
+<h2 class="mk-h2" style="color:#0F3E03;max-width:760px">Plus de 3&nbsp;000 soignants utilisent Medispring au quotidien.</h2>
+<p class="mk-lead">Ils apprécient sa capacité à simplifier leurs tâches tout en répondant aux exigences du terrain.</p>
+<div class="mk-qgrid">
+<div class="mk-qcard"><svg viewBox="0 0 108 20" width="86" height="16" role="img" aria-label="4 étoiles sur 5" style="display:block"><path transform="translate(0 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(22 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(44 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(66 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(88 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.2"/></svg><p>«&nbsp;Medispring est un outil intuitif et performant, parfaitement adapté aux réalités d’un poste de garde. Il facilite notre organisation quotidienne, améliore la fluidité du travail en équipe et renforce la qualité de prise en charge des patients. L’accompagnement proposé par l’équipe est réactif, professionnel et toujours orienté solutions.&nbsp;»</p><div class="mk-who"><img src="images/avatar.svg" alt="" width="48" height="48"><div><b>Corina Ruse</b><span>Coordinatrice Poste de garde - Gamena</span></div></div></div>
+<div class="mk-qcard"><svg viewBox="0 0 108 20" width="86" height="16" role="img" aria-label="5 étoiles sur 5" style="display:block"><path transform="translate(0 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(22 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(44 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(66 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(88 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/></svg><p>«&nbsp;Clairement, je trouve que "ça se voit" que Medispring est fait par des médecins, dans le sens où l'utilisation est assez intuitive dans la pratique journalière.&nbsp;»</p><div class="mk-who"><img src="images/avatar.svg" alt="" width="48" height="48"><div><b>Dr Stéphanie Bouvy</b><span>Jeune médecin</span></div></div></div>
+<div class="mk-qcard"><svg viewBox="0 0 108 20" width="86" height="16" role="img" aria-label="5 étoiles sur 5" style="display:block"><path transform="translate(0 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(22 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(44 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(66 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(88 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/></svg><p>«&nbsp;J’aime l’idée d’une coopérative. On sent que les médecins sont entendus dans leurs demandes d’améliorations, et que le logiciel continue de s’adapter à nos besoins.&nbsp;»</p><div class="mk-who"><img src="images/avatar.svg" alt="" width="48" height="48"><div><b>Dr Ingrid Cohnen</b><span>Médecin généraliste</span></div></div></div>
+<div class="mk-qcard"><svg viewBox="0 0 108 20" width="86" height="16" role="img" aria-label="4 étoiles sur 5" style="display:block"><path transform="translate(0 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(22 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(44 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(66 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(88 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.2"/></svg><p>«&nbsp;Le logiciel est performant au quotidien, à la pointe des outils e-santé, il répond parfaitement à l’exigence et à la rigueur de notre pratique. Ce qui était une contrainte est devenu un confort de travail.&nbsp;»</p><div class="mk-who"><img src="images/avatar.svg" alt="" width="48" height="48"><div><b>Dr Cédric De Roeck</b><span>Médecin généraliste</span></div></div></div>
+</div>
+<div><a class="mk-btn mk-btn-o" href="#ms-hero-form">Réserver une démo</a></div>
+</div></section>
+
+<!-- ===================== G · REPRISE DE CONTRAT ===================== -->
+<section><div class="mk-wrap" style="padding-top:96px;padding-bottom:96px">
+<div class="mk-lime" style="padding:56px;display:flex;flex-wrap:wrap;align-items:center;gap:32px 56px">
+<div class="mk-col" style="flex:1 1 520px;min-width:0;gap:16px">
+<h2 class="mk-h2" style="font-size:2.25rem;color:#0F3E03">Encore lié à un autre fournisseur&nbsp;? Ça n'a pas à vous freiner.</h2>
+<p style="font-size:1.1rem;max-width:620px">Medispring couvre la période restante de votre contrat actuel. Pas de double facturation&nbsp;; <strong>jusqu'à 9 mois offerts</strong>, pour que vous puissiez démarrer quand vous le souhaitez. <strong>Migration incluse</strong> sans frais supplémentaires&nbsp;!</p>
+</div>
+<div class="mk-col" style="flex:1 1 260px;min-width:0;gap:14px;align-items:flex-start">
+<a class="mk-btn mk-btn-p" href="#ms-hero-form">Être contacté pour ma reprise</a>
+<a class="mk-lnk" href="#ms-hero-form">ou réserver une démo</a>
+</div>
+</div>
+</div></section>
+
+<!-- ===================== H · CALCULATEUR DE PRIX (Typeform existant) ===================== -->
+<section id="ms-devis" class="mk-mist"><div class="mk-wrap mk-sec mk-col" style="gap:32px">
+<h2 class="mk-h2" style="color:#0F3E03;max-width:820px;margin:0 auto;text-align:center">Calculez votre prix en quelques clics. Aucun frais caché, tout est inclus dans la licence.</h2>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px 32px;font-size:1.05rem">
+<div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span>Un prix adapté à votre situation</span></div>
+<div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span>Licence tout inclus, support et migration compris</span></div>
+<div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span>Environ 2 minutes, sans changer de site</span></div>
+</div>
+<div style="width:100%">
+<!-- Même lien que la page kiné actuelle. Ajuster la hauteur (height) si besoin. -->
+<iframe src="https://q0pnzbln9t7.typeform.com/to/mmh8pVEi?disable-auto-focus=true" title="Calculateur de prix Medispring Physio" loading="lazy" style="display:block;width:100%;height:600px;border:1px solid #EFEFEF;border-radius:.4rem;background:#fff"></iframe>
+</div>
+<p style="text-align:center"><a class="mk-lnk" href="#ms-hero-form">Une question&nbsp;? Parler à un conseiller</a></p>
+</div></section>
+
+<!-- ===================== I · CHECKLIST 2027 ===================== -->
+<section id="ms-checklist" style="background:#0F3E03;color:#fff"><div class="mk-wrap mk-sec" style="display:flex;flex-wrap:wrap;align-items:center;gap:40px 64px">
+<div class="mk-col" style="flex:1 1 480px;min-width:0;gap:18px">
+<h2 class="mk-h2" style="color:#fff;font-size:2.25rem">Prêt·e pour 2027&nbsp;? <span class="mk-lm">10 points pour vérifier simplement où vous en êtes.</span></h2>
+<p style="font-size:1.05rem;color:rgba(255,255,255,.85);max-width:560px">Premier point&nbsp;: votre <strong style="color:#fff">certificat eHealth</strong>. Il authentifie votre système lors des connexions sécurisées avec <strong style="color:#fff">MyCareNet</strong>. Il est valable 3 ans et peut être renouvelé à partir de 90 jours avant son expiration.</p>
+<p style="font-size:1.05rem;color:rgba(255,255,255,.85)">Recevez la checklist et le guide «&nbsp;L'eSanté du kiné, simplement&nbsp;».</p>
+</div>
+<div style="flex:1 1 360px;min-width:0">
+<!-- FORMULAIRE CHECKLIST : même structure que le formulaire existant (redirection /merci-guide-kine-2027). À TESTER. -->
+<form action="/website/form/" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" data-pre-fill="true" data-model_name="crm.lead" data-success-mode="redirect" data-success-page="/merci-guide-kine-2027">
+<div class="s_website_form_rows mk-rows">
+<div class="s_website_form_field s_website_form_required mk-fld" data-type="email" data-name="Field">
+<label class="s_website_form_label" for="mk-cl-mail" style="color:#fff"><span class="s_website_form_label_content">E-mail</span><span class="s_website_form_mark"> *</span></label>
+<input id="mk-cl-mail" class="s_website_form_input" type="email" name="email_from" required>
+</div>
+<input type="hidden" name="contact_name" value="Kiné" class="s_website_form_input">
+<input type="hidden" name="name" value="Checklist 2027 kiné" class="s_website_form_input">
+<input type="hidden" name="team_id" value="1" class="s_website_form_input">
+<input type="hidden" name="user_id" value="9" class="s_website_form_input">
+<div class="s_website_form_submit mk-submit" data-name="Submit Button">
+<span id="s_website_form_result_cl"></span>
+<a href="#" role="button" class="mk-btn mk-btn-s s_website_form_send">Recevoir la checklist</a>
+</div>
+<p style="font-size:.8rem;color:rgba(255,255,255,.65)">En envoyant ce formulaire, vous acceptez notre <a href="/politique-de-vie-privee" style="color:#D8ED84">politique de vie privée</a>.</p>
+</div>
+</form>
+</div>
+</div></section>
+
+<!-- ===================== J · SUPPORT ===================== -->
+<section><div class="mk-wrap mk-sec" style="display:flex;flex-wrap:wrap;align-items:center;gap:40px 72px">
+<div class="mk-imgp" style="flex:1 1 420px;min-width:0"><img src="images/support-equipe.png" alt="Une conseillère de l'équipe support Medispring au téléphone" width="560" height="520" loading="lazy" style="max-width:520px"></div>
+<div class="mk-col" style="flex:1 1 420px;min-width:0;gap:24px">
+<h2 class="mk-h2" style="color:#0F3E03">Un support humain, local et accessible.</h2>
+<div class="mk-col" style="gap:16px;font-size:1.05rem">
+<div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span><strong>Une équipe basée en Belgique</strong>, proche des utilisateurs.</span></div>
+<div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span><strong>Des réponses concrètes</strong> par des interlocuteurs qualifiés.</span></div>
+<div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span><strong>Assistance incluse</strong> dans votre licence, sans supplément.</span></div>
+</div>
+<div class="mk-col" style="gap:12px;align-items:flex-start">
+<span style="font-size:1.15rem;font-weight:600;color:#0F3E03">Parler à un conseiller&nbsp;: <a href="tel:+3281280117" style="color:#0F3E03;text-decoration:none">+32 81 28 01 17</a></span>
+<a class="mk-lnk" href="https://calendly.com/formation-medispring/formation-nouvel-utilisateur">Réserver une séance Q&amp;A</a>
+</div>
+</div>
+</div></section>
+
+<!-- ===================== K · FAQ ===================== -->
+<section id="ms-faq" class="mk-mist"><div class="mk-wrap mk-sec mk-col" style="gap:24px">
+<h2 class="mk-h2" style="color:#0F3E03">Questions fréquentes</h2>
+<div class="mk-faq" style="max-width:820px;border-top:1px solid #EFEFEF">
+<details open><summary>Que se passe-t-il avec mon contrat actuel&nbsp;?</summary><p>Medispring couvre la période restante de votre contrat actuel. Pas de double facturation, jusqu'à 9 mois offerts.</p></details>
+<details><summary>La migration de mes données est-elle incluse&nbsp;?</summary><p>Oui, sans frais supplémentaires.</p></details>
+<details><summary>Quelle différence entre eAttest et eFact&nbsp;?</summary><p>eAttest&nbsp;: le patient paie la totalité des honoraires, hors tiers payant. eFact&nbsp;: vous appliquez le tiers payant. Dans les deux cas, l'envoi à la mutualité est électronique.</p></details>
+<details><summary>À quoi sert l'eAgreement&nbsp;?</summary><p>Envoyer les notifications et demandes d'accord aux médecins-conseils des mutualités, et recevoir leurs accords électroniquement.</p></details>
+<details><summary>À quoi sert Member Data&nbsp;?</summary><p>Consulter les données d'assurabilité du patient&nbsp;: son statut d'assurance et ses droits auprès de la mutualité.</p></details>
+<details><summary>Mon certificat eHealth est-il à jour&nbsp;?</summary><p>Il est valable 3 ans et peut être renouvelé à partir de 90 jours avant son expiration. Anticipez&nbsp;: la procédure d'obtention peut prendre du temps.</p></details>
+<details><summary>Medispring Physio convient-il à une pratique de groupe&nbsp;?</summary><p>Oui. En solo, en pratique de groupe ou en maison médicale, Medispring Physio s'adapte à votre pratique.</p></details>
+<details><summary>Combien coûte Medispring Physio&nbsp;?</summary><p>Le prix dépend de votre situation. Calculez-le en quelques clics avec le bouton «&nbsp;Calculer mon devis&nbsp;». Support et migration sont inclus, sans frais supplémentaires.</p></details>
+</div>
+</div></section>
+
+<!-- ===================== L · CTA FINAL ===================== -->
+<section class="mk-hero"><div class="mk-wrap mk-sec mk-col" style="gap:24px;align-items:flex-start">
+<h2 class="mk-h2" style="color:#fff;max-width:720px">Découvrez Medispring Physio <span class="mk-lm">pour votre cabinet.</span></h2>
+<p style="font-size:1.15rem;color:rgba(255,255,255,.86);max-width:620px">Dossier patient, prescription, facturation et agenda réunis dans un seul outil, connecté à l'écosystème e-Santé belge.</p>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px">
+<a class="mk-btn mk-btn-s" href="#ms-devis">Calculer mon devis</a>
+<a class="mk-btn mk-btn-ow" href="#ms-hero-form">Réserver une démo</a>
+<a href="tel:+3281280117" style="font-size:1.15rem;font-weight:600;color:#fff;text-decoration:none">+32 81 28 01 17</a>
+</div>
+</div></section>
+
+</div>
+
+<!-- Fondu à l'apparition : ajoute la classe mk-in quand un bloc entre dans l'écran. -->
+<script>
+(function(){
+  var root=document.querySelector('.mk');
+  if(!root||!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var els=root.querySelectorAll('section:not(.mk-hero) > .mk-sec > *, section:not(.mk-hero) > .mk-wrap > .mk-lime, .mk-stat');
+  var fired=false;
+  var io=new IntersectionObserver(function(entries){
+    fired=true;
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('mk-in');io.unobserve(e.target);}});
+  },{rootMargin:'0px 0px -8% 0px',threshold:0.12});
+  Array.prototype.forEach.call(els,function(el){el.classList.add('mk-rv');io.observe(el);});
+  root.classList.add('mk-js');
+  /* sécurité : si le navigateur ne signale rien, on affiche tout */
+  setTimeout(function(){if(!fired){Array.prototype.forEach.call(els,function(el){el.classList.add('mk-in');});}},1500);
+})();
+</script>
+
+<!--
+==========================================================================
+ IMAGES À IMPORTER DANS LA MÉDIATHÈQUE ODOO, PUIS À REMPLACER ICI
+   images/check.svg        coche des listes
+   images/heart.svg        pastille cœur des cartes
+   images/kine-suivi.png   photo bloc « suivi patient »
+   images/kine-factu.png   photo bloc « facturation »
+   images/agenda-cabinet.png  visuel agenda du bloc « agenda et coordination » (repris du site)
+   images/avatar.svg       pastille ronde des citations (la même que sur le site)
+   images/support-equipe.png  photo de l'équipe support (traitement vert du design system)
+
+ TEST DES FORMULAIRES (avant la mise en ligne)
+   1. Envoyer chacun des 2 formulaires avec un faux e-mail.
+   2. Vérifier qu'un lead arrive dans le CRM, avec la bonne équipe
+      et le bon commercial, et que la redirection s'affiche.
+   3. Si rien n'arrive : remplacer le <form> par un bloc natif « Formulaire »
+      d'Odoo (même champs). Le reste de la page ne change pas.
+   Champ « N° INAMI » : absent ici. Il faut un champ INAMI dans Odoo
+   (champ personnalisé) avant de l'ajouter au formulaire du hero.
+==========================================================================
+-->
+
+</body></html>
