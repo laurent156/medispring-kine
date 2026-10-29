@@ -134,6 +134,9 @@ body{margin:0;background:#fff}
   .mk-card:hover,.mk-qcard:hover{transform:none}
 }
 
+/* ---------- calculateur Typeform : hauteur imposée (Typeform livre 500px, trop court) ---------- */
+.mk [data-tf-live] > div,.mk [data-tf-live] .tf-v1-widget,.mk [data-tf-live] iframe{height:680px !important}
+
 /* ---------- petits écrans ---------- */
 @media (max-width:767px){
   .mk-wrap{padding:0 20px}
@@ -143,6 +146,7 @@ body{margin:0;background:#fff}
   .mk .mk-h3{font-size:1.5rem}
   .mk-fcard{padding:24px}
   .mk-qgrid{grid-template-columns:1fr}
+  .mk [data-tf-live] > div,.mk [data-tf-live] .tf-v1-widget,.mk [data-tf-live] iframe{height:620px !important}
   .mk-lime{padding:32px 24px !important}
 }
 @media (prefers-reduced-motion:reduce){ .mk a.mk-btn{transition:none} }
