@@ -40,7 +40,7 @@ Deux options pour relier le formulaire du hero au CRM Odoo :
 - **Bloc « Formulaire » natif d'Odoo** (recommandé) : réglé sur « Créer une opportunité », placé dans une colonne à droite du hero. Pas de développement, Odoo gère l'envoi et la sécurité.
 - **Formulaire codé dans la page** : il reprend la structure du formulaire Odoo actuel (envoi vers `/website/form/`, lead dans le CRM). À tester : selon la version d'Odoo, le code intégré peut empêcher l'envoi. Les champs personnalisés (N° INAMI) doivent être autorisés pour les formulaires du site.
 
-Le calculateur de prix reste le Typeform existant ; ses réponses arrivent par e-mail dans le CRM.
+Le calculateur de prix est le Typeform « Calculateur web Medispring - kinés » (intégration live) ; ses réponses arrivent par e-mail dans le CRM. Le guide « Cap sur 2027 » reprend le formulaire e-mail existant. La section vidéo attend le lien YouTube (code à coller indiqué en commentaire).
 
 ## Animations
 
