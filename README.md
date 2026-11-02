@@ -41,7 +41,7 @@ Deux options pour relier le formulaire du hero au CRM Odoo :
 - **Bloc « Formulaire » natif d'Odoo** (recommandé) : réglé sur « Créer une opportunité », placé dans une colonne à droite du hero. Pas de développement, Odoo gère l'envoi et la sécurité.
 - **Formulaire codé dans la page** : il reprend la structure du formulaire Odoo actuel (envoi vers `/website/form/`, lead dans le CRM). À tester : selon la version d'Odoo, le code intégré peut empêcher l'envoi. Les champs personnalisés (N° INAMI) doivent être autorisés pour les formulaires du site.
 
-Le calculateur de prix est le Typeform « Calculateur web Medispring - kinés » (intégration live) ; ses réponses arrivent par e-mail dans le CRM. Le guide « Cap sur 2027 » reprend le formulaire e-mail existant. La section vidéo intègre la vidéo YouTube « Un seul dossier, une équipe multidisciplinaire » (lecteur youtube-nocookie, sans cookie avant la lecture).
+Le calculateur de prix est le Typeform « Calculateur web Medispring - kinés » (intégration live) ; ses réponses arrivent par e-mail dans le CRM. Le guide « Cap sur 2027 » reprend le formulaire e-mail existant. La section vidéo intègre la vidéo YouTube « Découvrez Medispring Physio » (FR ; la version NL utilise provisoirement « Eén patiëntendossier, één multidisciplinair team ») (lecteur youtube-nocookie, sans cookie avant la lecture).
 
 Formulaire du hero : après l'envoi, Odoo remplace le formulaire par un message de confirmation (pas de page de remerciement à créer). Formulaire du guide : redirection vers la page existante `/merci-guide-kine-2027`.
 
