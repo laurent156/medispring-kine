@@ -47,7 +47,7 @@ Formulaire du hero : après l'envoi, Odoo remplace le formulaire par un message 
 
 ## Français et néerlandais
 
-Odoo ne traduit pas le contenu d'un bloc « Code intégré » : la page contient donc deux blocs, chacun visible dans une seule langue. Les ancres et les identifiants de la version NL finissent par `-nl` pour éviter les doublons. Les points marqués « NL À CONFIRMER » dans `kine-odoo-nl.html` attendent une réponse de Medispring (Typeform, vidéo, lien Q&A, page de remerciement du guide).
+Odoo ne traduit pas le contenu d'un bloc « Code intégré » : la page contient donc deux blocs, chacun visible dans une seule langue. Les ancres et les identifiants de la version NL finissent par `-nl` pour éviter les doublons. Les points marqués « NL À CONFIRMER » dans `kine-odoo-nl.html` attendent une réponse de Medispring (Typeform, lien Q&A, page de remerciement du guide). La vidéo NL est intégrée..
 
 ## Animations
 
