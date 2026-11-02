@@ -6,8 +6,9 @@ Nouvelle version de la page [medispring.be/kinesitherapeutes](https://www.medisp
 
 | Fichier | Rôle |
 | --- | --- |
-| `kine-odoo.html` | Le code à coller dans un bloc « Code intégré » d'Odoo. Ne charge pas de police : Omnes Pro et Asap viennent du site. |
-| `kine-apercu.html` | Aperçu de la page hors d'Odoo, avec les polices et les images. À ne pas coller dans Odoo. |
+| `kine-odoo.html` | Version FR : le code à coller dans un bloc « Code intégré » d'Odoo. Ne charge pas de police : Omnes Pro et Asap viennent du site. |
+| `kine-odoo-nl.html` | Version NL (V1, à faire relire) : même page, à coller dans un second bloc « Code intégré ». |
+| `kine-apercu.html`, `kine-apercu-nl.html` | Aperçus FR et NL hors d'Odoo, avec les polices et les images. À ne pas coller dans Odoo. |
 | `images/` | Les 7 images de la page, à importer dans la médiathèque d'Odoo. |
 | `fonts/` | Omnes Pro Bold et Medium, utilisées uniquement par l'aperçu. |
 
@@ -28,8 +29,8 @@ Ouvrir `kine-apercu.html` par un double-clic marche aussi, mais certains navigat
 
 1. Importer les 7 fichiers de `images/` dans la médiathèque d'Odoo, puis remplacer chaque `images/xxx` de `kine-odoo.html` par l'URL Odoo.
 2. Coller `kine-odoo.html` dans un bloc « Code intégré » réglé sur **pleine largeur**.
-3. Créer la page de remerciement `/merci-demande-kine`.
-4. Tester les deux formulaires avec un faux lead (voir ci-dessous).
+3. Ajouter un second bloc « Code intégré » avec `kine-odoo-nl.html`, puis régler chaque bloc en **Visibilité > Conditionnelle > Langues** (FR pour l'un, NL pour l'autre).
+4. Tester les formulaires avec un faux lead, en FR et en NL (voir ci-dessous).
 
 Le menu et le pied de page restent ceux d'Odoo.
 
@@ -41,6 +42,12 @@ Deux options pour relier le formulaire du hero au CRM Odoo :
 - **Formulaire codé dans la page** : il reprend la structure du formulaire Odoo actuel (envoi vers `/website/form/`, lead dans le CRM). À tester : selon la version d'Odoo, le code intégré peut empêcher l'envoi. Les champs personnalisés (N° INAMI) doivent être autorisés pour les formulaires du site.
 
 Le calculateur de prix est le Typeform « Calculateur web Medispring - kinés » (intégration live) ; ses réponses arrivent par e-mail dans le CRM. Le guide « Cap sur 2027 » reprend le formulaire e-mail existant. La section vidéo intègre la vidéo YouTube « Un seul dossier, une équipe multidisciplinaire » (lecteur youtube-nocookie, sans cookie avant la lecture).
+
+Formulaire du hero : après l'envoi, Odoo remplace le formulaire par un message de confirmation (pas de page de remerciement à créer). Formulaire du guide : redirection vers la page existante `/merci-guide-kine-2027`.
+
+## Français et néerlandais
+
+Odoo ne traduit pas le contenu d'un bloc « Code intégré » : la page contient donc deux blocs, chacun visible dans une seule langue. Les ancres et les identifiants de la version NL finissent par `-nl` pour éviter les doublons. Les points marqués « NL À CONFIRMER » dans `kine-odoo-nl.html` attendent une réponse de Medispring (Typeform, vidéo, lien Q&A, page de remerciement du guide).
 
 ## Animations
 

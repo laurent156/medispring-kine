@@ -10,8 +10,10 @@
  2. Dans l'éditeur, régler le bloc « Code intégré » sur PLEINE LARGEUR
     (option Largeur du conteneur), sinon les bandes de couleur
     ne vont pas jusqu'aux bords de l'écran.
- 3. Créer la page de remerciement /merci-demande-kine.
- 4. Tester les 2 formulaires avec un faux lead (voir « TEST » en bas).
+ 3. Tester les 2 formulaires avec un faux lead (voir « TEST » en bas).
+ 4. Page bilingue : ce bloc est la version FR. La version NL est dans
+    kine-odoo-nl.html. Mettre les deux blocs « Code intégré » sur la page
+    et régler chacun en Visibilité > Conditionnelle > Langues (FR / NL).
 
  Le menu et le pied de page restent ceux d'Odoo.
  Les polices ne sont pas chargées ici : les titres prennent Omnes Pro
@@ -28,6 +30,7 @@
 .mk p{margin:0}
 .mk img{max-width:100%}
 .mk a{color:#0F3E03}
+.mk .d-none{display:none !important}
 .mk-wrap{max-width:1180px;margin:0 auto;padding:0 40px}
 .mk-sec{padding-top:96px;padding-bottom:104px}
 .mk-col{display:flex;flex-direction:column}
@@ -73,6 +76,8 @@
 .mk-rp input:focus-visible + span{outline:2px solid #0F3E03;outline-offset:2px}
 .mk-submit a{width:100%}
 .mk-note{font-size:.8rem;color:rgba(33,37,41,.55);text-align:center}
+.mk-done{display:flex;flex-direction:column;gap:10px;background:#FBFFF1;border:1px solid #D5EC7B;border-radius:.4rem;padding:24px}
+.mk-done b{font-family:'omnes-pro','Omnes Pro','Asap',sans-serif;font-size:1.3rem;color:#0F3E03}
 
 /* ---------- cartes ---------- */
 .mk-card{background:#fff;border:1px solid #EFEFEF;border-radius:.4rem;padding:24px}
@@ -145,7 +150,7 @@
 @media (prefers-reduced-motion:reduce){ .mk a.mk-btn{transition:none} }
 </style>
 
-<div class="mk">
+<div class="mk" id="mk-fr" lang="fr">
 
 <!-- ===================== B · HERO ===================== -->
 <section class="mk-hero"><div class="mk-wrap mk-sec" style="display:flex;flex-wrap:wrap;gap:48px 64px;align-items:center">
@@ -171,7 +176,7 @@
 <div id="ms-hero-form" class="mk-fcard mk-col" style="flex:0 1 440px;min-width:0;width:100%;gap:16px">
 <h2>Parlez à un conseiller</h2>
 <p style="font-size:.95rem;color:rgba(33,37,41,.7)">Laissez vos coordonnées. Un conseiller Medispring vous rappelle ou planifie votre démo.</p>
-<form action="/website/form/" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" data-pre-fill="true" data-model_name="crm.lead" data-success-mode="redirect" data-success-page="/merci-demande-kine">
+<form action="/website/form/" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" data-pre-fill="true" data-model_name="crm.lead" data-success-mode="message">
 <div class="s_website_form_rows mk-rows">
 <div class="s_website_form_field mk-fld" data-type="char" data-name="Field">
 <div class="mk-rp s_website_form_multiple" data-name="name" data-display="horizontal">
@@ -203,6 +208,8 @@
 </div>
 </div>
 </form>
+<!-- Message affiché par Odoo à la place du formulaire après l'envoi (data-success-mode="message"). -->
+<div class="s_website_form_end_message d-none"><div class="mk-done"><b>Merci, c'est bien reçu&nbsp;!</b><p>Un conseiller Medispring vous recontacte rapidement, du lundi au vendredi.</p><p>En attendant, <a href="https://form.typeform.com/to/IPrHTYXW" target="_blank" rel="noopener">calculez votre devis en 30 secondes</a>.</p></div></div>
 <p class="mk-note">En envoyant ce formulaire, vous acceptez notre <a href="/politique-de-vie-privee">politique de vie privée</a>.</p>
 </div>
 </div></section>
@@ -333,7 +340,8 @@
 <div style="width:100%">
 <!-- Calculateur Typeform « Calculateur web Medispring - kinés » (intégration live : le contenu et la hauteur se règlent dans Typeform). -->
 <div data-tf-live="01M61MKV6B1GR8RPV534DY6ZXB" style="width:100%"></div>
-<script src="https://embed.typeform.com/next/embed.js"></script>
+<!-- Script Typeform chargé une seule fois, même si les blocs FR et NL sont sur la même page. -->
+<script>if(!document.querySelector('script[src*="embed.typeform.com/next/embed.js"]')){var s=document.createElement('script');s.src='https://embed.typeform.com/next/embed.js';document.body.appendChild(s);}</script>
 </div>
 <p style="text-align:center"><a class="mk-lnk" href="#ms-hero-form">Une question&nbsp;? Parler à un conseiller</a></p>
 </div></section>
@@ -346,7 +354,7 @@
 <p style="font-size:1.1rem;color:rgba(255,255,255,.86);max-width:560px">Le guide complet du kiné pour comprendre et préparer les changements de 2027.</p>
 </div>
 <div style="flex:1 1 360px;min-width:0">
-<!-- FORMULAIRE GUIDE « CAP SUR 2027 » : même structure que le formulaire existant (redirection /merci-guide-kine-2027). À TESTER. -->
+<!-- FORMULAIRE GUIDE « CAP SUR 2027 » : mêmes valeurs que le formulaire existant de la page (titre « Cap sur 2027 ebook », redirection /merci-guide-kine-2027). À TESTER. -->
 <form action="/website/form/" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" data-pre-fill="true" data-model_name="crm.lead" data-success-mode="redirect" data-success-page="/merci-guide-kine-2027">
 <div class="s_website_form_rows mk-rows">
 <div class="s_website_form_field s_website_form_required mk-fld" data-type="email" data-name="Field">
@@ -354,7 +362,7 @@
 <input id="mk-guide-mail" class="s_website_form_input" type="email" name="email_from" required>
 </div>
 <input type="hidden" name="contact_name" value="Kiné" class="s_website_form_input">
-<input type="hidden" name="name" value="Guide Cap sur 2027 kiné" class="s_website_form_input">
+<input type="hidden" name="name" value="Cap sur 2027 ebook" class="s_website_form_input">
 <input type="hidden" name="team_id" value="1" class="s_website_form_input">
 <input type="hidden" name="user_id" value="9" class="s_website_form_input">
 <div class="s_website_form_submit mk-submit" data-name="Submit Button">
@@ -415,7 +423,7 @@
 <!-- Fondu à l'apparition : ajoute la classe mk-in quand un bloc entre dans l'écran. -->
 <script>
 (function(){
-  var root=document.querySelector('.mk');
+  var root=document.getElementById('mk-fr');
   if(!root||!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   var els=root.querySelectorAll('section:not(.mk-hero) > .mk-sec > *, section:not(.mk-hero) > .mk-wrap > .mk-lime, .mk-stat');
   var fired=false;
@@ -444,7 +452,8 @@
  TEST DES FORMULAIRES (avant la mise en ligne)
    1. Envoyer chacun des 2 formulaires avec un faux e-mail.
    2. Vérifier qu'un lead arrive dans le CRM, avec la bonne équipe
-      et le bon commercial, et que la redirection s'affiche.
+      et le bon commercial. Hero : le message de confirmation remplace
+      le formulaire. Guide : redirection vers /merci-guide-kine-2027.
    3. Si rien n'arrive : remplacer le <form> par un bloc natif « Formulaire »
       d'Odoo (même champs). Le reste de la page ne change pas.
    Champ « N° INAMI » : absent ici. Il faut un champ INAMI dans Odoo
