@@ -425,6 +425,27 @@ html:not([lang^="fr"]) body:not(.editor_enable) .s_embed_code:has(#mk-fr){displa
 
 </div>
 
+<!-- Suivi Plausible : quand Odoo affiche le message de confirmation d'un formulaire,
+     envoie l'événement « Lead kiné » (objectif à créer dans Plausible, type « Custom event »).
+     Détails envoyés : formulaire (conseiller / guide), demande (rappel / demo), langue. -->
+<script>
+(function(){
+  var root=document.getElementById('mk-fr');
+  if(!root||!('MutationObserver' in window))return;
+  Array.prototype.forEach.call(root.querySelectorAll('.s_website_form_end_message'),function(msg){
+    var box=msg.parentElement,sent=false;
+    new MutationObserver(function(){
+      if(sent||msg.classList.contains('d-none'))return;
+      sent=true;
+      var props={formulaire:/hero-form/.test(box.id)?'conseiller':'guide',langue:'fr'};
+      var choix=box.querySelector('input[name="name"]:checked');
+      if(choix){props.demande=choix.value.indexOf('démo')>-1?'demo':'rappel';}
+      if(typeof window.plausible==='function'){window.plausible('Lead kiné',{props:props});}
+    }).observe(msg,{attributes:true,attributeFilter:['class']});
+  });
+})();
+</script>
+
 <!-- Fondu à l'apparition : ajoute la classe mk-in quand un bloc entre dans l'écran. -->
 <script>
 (function(){
@@ -459,7 +480,9 @@ html:not([lang^="fr"]) body:not(.editor_enable) .s_embed_code:has(#mk-fr){displa
    2. Vérifier qu'un lead arrive dans le CRM, avec la bonne équipe
       et le bon commercial. Hero : le message de confirmation remplace
       le formulaire. Guide : redirection vers /merci-guide-kine-2027.
-   3. Si rien n'arrive : remplacer le <form> par un bloc natif « Formulaire »
+   3. Plausible > Temps réel : vérifier que l'événement « Lead kiné »
+      apparaît après l'envoi du formulaire du hero.
+   4. Si rien n'arrive : remplacer le <form> par un bloc natif « Formulaire »
       d'Odoo (même champs). Le reste de la page ne change pas.
    Champ « N° INAMI » : absent ici. Il faut un champ INAMI dans Odoo
    (champ personnalisé) avant de l'ajouter au formulaire du hero.
