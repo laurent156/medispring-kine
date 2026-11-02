@@ -29,7 +29,7 @@ Ouvrir `kine-apercu.html` par un double-clic marche aussi, mais certains navigat
 
 1. Importer les 7 fichiers de `images/` dans la médiathèque d'Odoo, puis remplacer chaque `images/xxx` de `kine-odoo.html` par l'URL Odoo.
 2. Coller `kine-odoo.html` dans un bloc « Code intégré » réglé sur **pleine largeur**.
-3. Ajouter un second bloc « Code intégré » avec `kine-odoo-nl.html`, puis régler chaque bloc en **Visibilité > Conditionnelle > Langues** (FR pour l'un, NL pour l'autre).
+3. Ajouter un second bloc « Code intégré » avec `kine-odoo-nl.html`, juste en dessous. Chaque bloc se masque tout seul dans l'autre langue : aucun réglage de visibilité à faire. Mettre les marges des deux blocs à 0.
 4. Tester les formulaires avec un faux lead, en FR et en NL (voir ci-dessous).
 
 Le menu et le pied de page restent ceux d'Odoo.
@@ -47,7 +47,7 @@ Formulaire du hero : après l'envoi, Odoo remplace le formulaire par un message 
 
 ## Français et néerlandais
 
-Odoo ne traduit pas le contenu d'un bloc « Code intégré » : la page contient donc deux blocs, chacun visible dans une seule langue. Les ancres et les identifiants de la version NL finissent par `-nl` pour éviter les doublons. Les points marqués « NL À CONFIRMER » dans `kine-odoo-nl.html` attendent une réponse de Medispring (Typeform, lien Q&A, page de remerciement du guide). La vidéo NL est intégrée..
+Odoo ne traduit pas le contenu d'un bloc « Code intégré » : la page contient donc deux blocs, chacun visible dans une seule langue. Le masquage est dans le code (règle CSS sur la langue de la page, comme l'option Visibilité > Langues d'Odoo) ; en mode édition, les deux blocs restent visibles. Les ancres et les identifiants de la version NL finissent par `-nl` pour éviter les doublons. Les points marqués « NL À CONFIRMER » dans `kine-odoo-nl.html` attendent une réponse de Medispring (Typeform, lien Q&A, page de remerciement du guide). La vidéo NL est intégrée..
 
 ## Animations
 

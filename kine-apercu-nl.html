@@ -22,10 +22,10 @@ body{margin:0;background:#fff}
     (option Largeur du conteneur), sinon les bandes de couleur
     ne vont pas jusqu'aux bords de l'écran.
  3. Tester les 2 formulaires avec un faux lead (voir « TEST » en bas).
- 4. Page bilingue : ce bloc est la version NL (/nl_BE/kinesitherapeutes).
-    La version FR est dans kine-odoo.html. Mettre les deux blocs
-    « Code intégré » sur la page et régler chacun en
-    Visibilité > Conditionnelle > Langues (FR / NL).
+ 4. Page bilingue : ce bloc est la version NL. La version FR est dans
+    kine-odoo.html. Coller les deux blocs « Code intégré » l'un sous l'autre :
+    chacun se masque tout seul dans l'autre langue (aucun réglage de
+    visibilité nécessaire). Mettre les marges du bloc à 0.
  5. V1 à faire relire par un néerlandophone. Points ouverts, marqués
     « NL À CONFIRMER » : Typeform NL, lien Q&A NL,
     page de remerciement du guide en NL.
@@ -46,6 +46,10 @@ body{margin:0;background:#fff}
 .mk img{max-width:100%}
 .mk a{color:#0F3E03}
 .mk .d-none{display:none !important}
+/* Langue : ce bloc ne s'affiche que sur la page NL (comme l'option Visibilité > Langues d'Odoo, mais sans réglage).
+   Le bloc reste visible en mode édition. */
+html:not([lang^="nl"]) body:not(.editor_enable) #mk-nl,
+html:not([lang^="nl"]) body:not(.editor_enable) .s_embed_code:has(#mk-nl){display:none !important}
 .mk-wrap{max-width:1180px;margin:0 auto;padding:0 40px}
 .mk-sec{padding-top:96px;padding-bottom:104px}
 .mk-col{display:flex;flex-direction:column}
