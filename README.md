@@ -7,7 +7,7 @@ Nouvelle version de la page [medispring.be/kinesitherapeutes](https://www.medisp
 | Fichier | Rôle |
 | --- | --- |
 | `kine-odoo.html` | Version FR : le code à coller dans un bloc « Code intégré » d'Odoo. Ne charge pas de police : Omnes Pro et Asap viennent du site. |
-| `kine-odoo-nl.html` | Version NL (V1, à faire relire) : même page, à coller dans un second bloc « Code intégré ». |
+| `kine-odoo-nl.html` | Version NL (textes relus par Medispring) : même page, à coller dans un second bloc « Code intégré ». |
 | `kine-apercu.html`, `kine-apercu-nl.html` | Aperçus FR et NL hors d'Odoo, avec les polices et les images. À ne pas coller dans Odoo. |
 | `images/` | Les 7 images de la page, à importer dans la médiathèque d'Odoo. |
 | `fonts/` | Omnes Pro Bold et Medium, utilisées uniquement par l'aperçu. |
@@ -47,7 +47,7 @@ Formulaire du hero : après l'envoi, Odoo remplace le formulaire par un message 
 
 ## Français et néerlandais
 
-Odoo ne traduit pas le contenu d'un bloc « Code intégré » : la page contient donc deux blocs, chacun visible dans une seule langue. Le masquage est dans le code (règle CSS sur la langue de la page, comme l'option Visibilité > Langues d'Odoo) ; en mode édition, les deux blocs restent visibles. Les ancres et les identifiants de la version NL finissent par `-nl` pour éviter les doublons. Les points marqués « NL À CONFIRMER » dans `kine-odoo-nl.html` attendent une réponse de Medispring (Typeform, lien Q&A, page de remerciement du guide). La vidéo NL est intégrée..
+Odoo ne traduit pas le contenu d'un bloc « Code intégré » : la page contient donc deux blocs, chacun visible dans une seule langue. Le masquage est dans le code (règle CSS sur la langue de la page, comme l'option Visibilité > Langues d'Odoo) ; en mode édition, les deux blocs restent visibles. Les ancres et les identifiants de la version NL finissent par `-nl` pour éviter les doublons. Les points marqués « NL À CONFIRMER » dans `kine-odoo-nl.html` attendent une réponse de Medispring (Typeform, lien Q&A, page de remerciement du guide, vidéo kiné NL). La vidéo NL est intégrée..
 
 ## Suivi des conversions (Plausible)
 
