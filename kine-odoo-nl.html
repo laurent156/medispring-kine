@@ -443,6 +443,27 @@ html:not([lang^="nl"]) body:not(.editor_enable) .s_embed_code:has(#mk-nl){displa
 
 </div>
 
+<!-- Titre de la piste dans le CRM : ajoute le nom du kiné devant le type de demande
+     (ex. « Florence Seghin – Kiné : être rappelé »), pour que les commerciaux le voient
+     dans la liste des pistes sans ouvrir la fiche. Mis à jour juste avant l'envoi.
+     Le formulaire du guide garde son titre « Cap sur 2027 ebook ». -->
+<script>
+(function(){
+  var box=document.getElementById('ms-hero-form-nl');
+  var form=box&&box.querySelector('form');
+  if(!form)return;
+  function setTitle(){
+    var nom=((form.querySelector('input[name="contact_name"]')||{}).value||'').trim();
+    Array.prototype.forEach.call(form.querySelectorAll('input[name="name"]'),function(r){
+      if(!r.dataset.type){r.dataset.type=r.value;}
+      r.value=nom?nom+' – '+r.dataset.type:r.dataset.type;
+    });
+  }
+  form.addEventListener('click',function(e){if(e.target.closest('.s_website_form_send')){setTitle();}},true);
+  form.addEventListener('submit',setTitle,true);
+})();
+</script>
+
 <!-- Suivi Plausible : quand Odoo affiche le message de confirmation d'un formulaire,
      envoie l'événement « Lead kiné » (objectif à créer dans Plausible, type « Custom event »).
      Détails envoyés : formulaire (conseiller / guide), demande (rappel / demo), langue. -->
