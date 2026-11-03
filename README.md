@@ -9,7 +9,7 @@ Nouvelle version de la page [medispring.be/kinesitherapeutes](https://www.medisp
 | `kine-odoo.html` | Version FR : le code à coller dans un bloc « Code intégré » d'Odoo. Ne charge pas de police : Omnes Pro et Asap viennent du site. |
 | `kine-odoo-nl.html` | Version NL (textes relus par Medispring) : même page, à coller dans un second bloc « Code intégré ». |
 | `kine-apercu.html`, `kine-apercu-nl.html` | Aperçus FR et NL hors d'Odoo, avec les polices et les images. À ne pas coller dans Odoo. |
-| `images/` | Les 7 images de la page, à importer dans la médiathèque d'Odoo. |
+| `images/` | Les 7 images de la page (originaux). Elles sont déjà dans la médiathèque d'Odoo : les codes `kine-odoo*.html` pointent vers les adresses `/web/image/…` ; les aperçus utilisent ces fichiers. |
 | `fonts/` | Omnes Pro Bold et Medium, utilisées uniquement par l'aperçu. |
 
 ## Voir l'aperçu
@@ -27,7 +27,7 @@ Ouvrir `kine-apercu.html` par un double-clic marche aussi, mais certains navigat
 
 ## Intégrer dans Odoo
 
-1. Importer les 7 fichiers de `images/` dans la médiathèque d'Odoo, puis remplacer chaque `images/xxx` de `kine-odoo.html` par l'URL Odoo.
+1. Les images sont déjà dans la médiathèque d'Odoo (liste en bas de `kine-odoo.html`) : rien à faire.
 2. Coller `kine-odoo.html` dans un bloc « Code intégré » réglé sur **pleine largeur**.
 3. Ajouter un second bloc « Code intégré » avec `kine-odoo-nl.html`, juste en dessous. Chaque bloc se masque tout seul dans l'autre langue : aucun réglage de visibilité à faire. Mettre les marges des deux blocs à 0.
 4. Tester les formulaires avec un faux lead, en FR et en NL (voir ci-dessous).
