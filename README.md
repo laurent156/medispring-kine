@@ -30,7 +30,8 @@ Ouvrir `kine-apercu.html` par un double-clic marche aussi, mais certains navigat
 1. Les images sont déjà dans la médiathèque d'Odoo (liste en bas de `kine-odoo.html`) : rien à faire.
 2. Coller `kine-odoo.html` dans un bloc « Code intégré ». La pleine largeur, les marges à 0 et l'alignement à gauche sont réglés par le code.
 3. Ajouter un second bloc « Code intégré » avec `kine-odoo-nl.html`, juste en dessous. Chaque bloc se masque tout seul dans l'autre langue : aucun réglage de visibilité à faire.
-4. Tester les formulaires avec un faux lead, en FR et en NL (voir ci-dessous).
+4. **Synchroniser la version NL.** Odoo garde les changements faits en FR en attente pour le NL : ouvrir `/nl_BE/kinesitherapeutes`, cliquer sur **Traduire** puis **Sauvegarder**, sans rien modifier. À refaire après chaque modification en FR, sinon les visiteurs NL voient l'ancienne page.
+5. Tester les formulaires avec un faux lead, en FR et en NL (voir ci-dessous).
 
 Le menu et le pied de page restent ceux d'Odoo.
 
