@@ -6,14 +6,14 @@
  AVANT DE COLLER
  1. Images : déjà importées dans la médiathèque d'Odoo, rien à faire
     (liste en bas du fichier).
- 2. Dans l'éditeur, régler le bloc « Code intégré » sur PLEINE LARGEUR
-    (option Largeur du conteneur), sinon les bandes de couleur
-    ne vont pas jusqu'aux bords de l'écran.
+ 2. Largeur, marges et alignement du bloc « Code intégré » : réglés
+    par le code (pleine largeur, sans marges, texte aligné à gauche).
+    Rien à régler dans l'éditeur.
  3. Tester les 2 formulaires avec un faux lead (voir « TEST » en bas).
  4. Page bilingue : ce bloc est la version FR. La version NL est dans
     kine-odoo-nl.html. Coller les deux blocs « Code intégré » l'un sous l'autre :
     chacun se masque tout seul dans l'autre langue (aucun réglage de
-    visibilité nécessaire). Mettre les marges du bloc à 0.
+    visibilité nécessaire).
 
  Le menu et le pied de page restent ceux d'Odoo.
  Les polices ne sont pas chargées ici : les titres prennent Omnes Pro
@@ -24,7 +24,11 @@
 <style>
 /* ---------- base, limitée à la page ---------- */
 .mk, .mk *{box-sizing:border-box}
-.mk{font-family:'Asap',-apple-system,'Segoe UI',sans-serif;color:#212529;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.mk{font-family:'Asap',-apple-system,'Segoe UI',sans-serif;color:#212529;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;text-align:left}
+/* Bloc « Code intégré » d'Odoo : il centre le texte, ajoute des marges et limite la largeur (classe container).
+   On l'annule pour ce bloc seulement : pleine largeur, sans marges. */
+.s_embed_code:has(#mk-fr){padding-top:0 !important;padding-bottom:0 !important;text-align:left !important}
+.s_embed_code_embedded:has(> #mk-fr){max-width:none !important;width:100% !important;padding-left:0 !important;padding-right:0 !important}
 .mk h1,.mk h2,.mk h3,.mk h4,.mk-stat b,.mk-faq summary{font-family:'omnes-pro','Omnes Pro','Asap',-apple-system,'Segoe UI',sans-serif}
 .mk h1,.mk h2,.mk h3,.mk h4{font-weight:700;margin:0;color:#212529;text-wrap:balance}
 .mk p{margin:0}
