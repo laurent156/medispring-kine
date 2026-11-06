@@ -19,8 +19,9 @@
     cliquer sur Traduire puis Sauvegarder, sans rien changer. Sinon les
     visiteurs NL voient l'ancienne version de la page.
  5. Textes NL relus et corrigés par Medispring (novembre 2026).
-    Points ouverts, marqués « NL À CONFIRMER » : Typeform NL,
-    lien Q&A NL, page de remerciement du guide en NL, vidéo kiné NL.
+ 6. Offre « 2 mois offerts » : elle disparaît toute seule de la page après
+    le 1er janvier 2027 (« Geldig tot 1 januari 2027 »).
+    Pour changer la date : script « Offre » en bas du fichier.
 
  Le menu et le pied de page restent ceux d'Odoo.
  Les polices ne sont pas chargées ici : les titres prennent Omnes Pro
@@ -181,11 +182,11 @@ html:not([lang^="nl"]) body:not(.editor_enable) .s_embed_code:has(#mk-nl){displa
 <div class="mk-ck"><img src="/web/image/88997-2a1961c7/check.svg" alt="" width="26" height="26"><span><strong>Stap over naar een ander EMD zonder dubbel te betalen</strong>: tot 9 maanden gratis</span></div>
 <div class="mk-ck"><img src="/web/image/88997-2a1961c7/check.svg" alt="" width="26" height="26"><span><strong>Overzetting inbegrepen</strong>, zonder extra kosten</span></div>
 </div>
-<div class="mk-promo">Nog geen EMD? <strong>Medispring Physio-actie</strong>: 2 maanden gratis bij een verbintenis van 1 jaar, tot begin januari 2027.</div>
+<div class="mk-promo" data-offre>Nog geen EMD? <strong>Medispring Physio-aanbod</strong>: 2 maanden gratis bij een engagement van één jaar. Geldig tot 1 januari 2027.</div>
 <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:4px">
-<a class="mk-btn mk-btn-s" href="https://form.typeform.com/to/IPrHTYXW" target="_blank" rel="noopener">Bereken mijn prijsvoorstel in 30 seconden</a><!-- NL À CONFIRMER : lien du Typeform NL -->
+<a class="mk-btn mk-btn-s" href="https://form.typeform.com/to/IPrHTYXW" target="_blank" rel="noopener">Bereken mijn prijsvoorstel in 30 seconden</a>
 </div>
-<div style="font-size:.95rem;color:rgba(255,255,255,.8)">Of bel ons: <a href="tel:+3278077050" style="color:#fff;font-weight:700;text-decoration:none">+32 78 077 050</a> · ma–vr, 8.30–12.30 u. en 13.15–17.30 u.</div>
+<div style="font-size:.95rem;color:rgba(255,255,255,.8)">Of bel ons: <!-- même numéro que la page FR ; redirection interne prévue à l'arrivée du commercial NL --><a href="tel:+3281280117" style="color:#fff;font-weight:700;text-decoration:none">+32 81 28 01 17</a> · ma–vr, 8.30–12.30 u. en 13.15–17.30 u.</div>
 </div>
 
 <!-- FORMULAIRE DU HERO : même structure que le formulaire Odoo actuel de la page.
@@ -255,7 +256,7 @@ html:not([lang^="nl"]) body:not(.editor_enable) .s_embed_code:has(#mk-nl){displa
 <div class="mk-lime" style="padding:24px 28px;font-size:1.1rem">Betaalt de patiënt het volledige honorarium? Dan gebruikt u <strong>eAttest</strong>. Past u de derdebetalersregeling toe? Dan gebruikt u <strong>eFact</strong>.</div>
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px">
 <a class="mk-btn mk-btn-p" href="#ms-devis-nl">Mijn prijsvoorstel berekenen</a>
-<a class="mk-lnk" href="#ms-guide-nl">De gids ‘Op naar 2027’ ontvangen</a>
+<a class="mk-lnk" href="#ms-guide-nl">De gids ‘Richting 2027’ ontvangen</a>
 </div>
 </div></section>
 
@@ -278,8 +279,7 @@ html:not([lang^="nl"]) body:not(.editor_enable) .s_embed_code:has(#mk-nl){displa
 <h2 class="mk-h2" style="color:#fff;max-width:760px">Medispring Physio in beeld</h2>
 <p style="font-size:1.1rem;color:rgba(255,255,255,.86);max-width:620px">Bekijk het softwarepakket in actie: opvolging van sessies, elektronische facturatie en agenda.</p>
 <div class="mk-video">
-<!-- NL À CONFIRMER : remplacer par la vidéo kiné NL quand elle sera prête (titre prévu : « Ontdek Medispring Physio, het softwarepakket voor kinesitherapie dat uw dagelijkse werk vereenvoudigt »). -->
-<iframe src="https://www.youtube-nocookie.com/embed/_UCt5Z8Qpd4?rel=0" title="Medispring – Eén patiëntendossier, één multidisciplinair team" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+<iframe src="https://www.youtube-nocookie.com/embed/K0n41x30hkE?rel=0" title="Medispring Physio – video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
 </div>
 </div></section>
 
@@ -357,9 +357,9 @@ html:not([lang^="nl"]) body:not(.editor_enable) .s_embed_code:has(#mk-nl){displa
 <div class="mk-ck"><img src="/web/image/88997-2a1961c7/check.svg" alt="" width="26" height="26"><span>Een all-inlicentie, inclusief support en overzetting</span></div>
 <div class="mk-ck"><img src="/web/image/88997-2a1961c7/check.svg" alt="" width="26" height="26"><span>Minder dan 30 seconden, zonder de website te verlaten</span></div>
 </div>
-<div class="mk-offer">Nog geen EMD? <strong>Medispring Physio-actie: 2 maanden gratis</strong> bij een verbintenis van 1 jaar, tot begin januari 2027. De calculator toont de prijs zonder deze actie.</div>
+<div class="mk-offer" data-offre>Nog geen EMD? <strong>Medispring Physio-aanbod: 2 maanden gratis</strong> bij een engagement van één jaar. Geldig tot 1 januari 2027. De calculator toont de prijs zonder korting.</div>
 <div style="width:100%">
-<!-- Calculateur Typeform « Calculateur web Medispring - kinés » (intégration live). NL À CONFIRMER : identifiant du Typeform NL s'il existe. -->
+<!-- Calculateur Typeform « Calculateur web Medispring - kinés » (intégration live ; Typeform s'affiche dans la langue du navigateur du visiteur). -->
 <div data-tf-live="01M61MKV6B1GR8RPV534DY6ZXB" style="width:100%"></div>
 <!-- Script Typeform chargé une seule fois, même si les blocs FR et NL sont sur la même page. -->
 <script>if(!document.querySelector('script[src*="embed.typeform.com/next/embed.js"]')){var s=document.createElement('script');s.src='https://embed.typeform.com/next/embed.js';document.body.appendChild(s);}</script>
@@ -367,15 +367,15 @@ html:not([lang^="nl"]) body:not(.editor_enable) .s_embed_code:has(#mk-nl){displa
 <p style="text-align:center"><a class="mk-lnk" href="#ms-hero-form-nl">Een vraag? Praat met een adviseur</a></p>
 </div></section>
 
-<!-- ===================== I · GUIDE « CAP SUR 2027 » ===================== -->
+<!-- ===================== I · GUIDE « RICHTING 2027 » ===================== -->
 <section id="ms-guide-nl" style="background:#0F3E03;color:#fff"><div class="mk-wrap mk-sec" style="display:flex;flex-wrap:wrap;align-items:center;gap:40px 64px">
 <div class="mk-col" style="flex:1 1 480px;min-width:0;gap:18px">
-<span class="mk-bdg">Op naar 2027</span>
+<span class="mk-bdg">Richting 2027</span>
 <h2 class="mk-h2" style="color:#fff;font-size:2.25rem">eHealth voor kinesisten, <span class="mk-lm">eenvoudig uitgelegd.</span></h2>
 <p style="font-size:1.1rem;color:rgba(255,255,255,.86);max-width:560px">De complete gids voor kinesisten om de veranderingen van 2027 te begrijpen en zich erop voor te bereiden.</p>
 </div>
 <div style="flex:1 1 360px;min-width:0">
-<!-- FORMULAIRE GUIDE « OP NAAR 2027 » : mêmes valeurs que le formulaire NL existant (titre « Cap sur 2027 ebook »). NL À CONFIRMER : page de remerciement NL. À TESTER. -->
+<!-- FORMULAIRE GUIDE « RICHTING 2027 » : mêmes valeurs que le formulaire NL existant (titre « Cap sur 2027 ebook »). Redirection vers la page de remerciement NL. -->
 <form action="/website/form/" method="post" enctype="multipart/form-data" class="s_website_form o_mark_required" data-mark="*" data-pre-fill="true" data-model_name="crm.lead" data-success-mode="redirect" data-success-page="/nl_BE/merci-guide-kine-2027">
 <div class="s_website_form_rows mk-rows">
 <div class="s_website_form_field s_website_form_required mk-fld" data-type="email" data-name="Field">
@@ -408,8 +408,8 @@ html:not([lang^="nl"]) body:not(.editor_enable) .s_embed_code:has(#mk-nl){displa
 <div class="mk-ck"><img src="/web/image/88997-2a1961c7/check.svg" alt="" width="26" height="26"><span><strong>Ondersteuning inbegrepen</strong> in uw licentie, zonder supplement.</span></div>
 </div>
 <div class="mk-col" style="gap:12px;align-items:flex-start">
-<span style="font-size:1.15rem;font-weight:600;color:#0F3E03">Praat met een adviseur: <a href="tel:+3278077050" style="color:#0F3E03;text-decoration:none">+32 78 077 050</a></span>
-<a class="mk-lnk" href="https://calendly.com/formation-medispring/formation-nouvel-utilisateur">Een vraag-en-antwoordsessie boeken</a><!-- NL À CONFIRMER : lien Calendly NL -->
+<span style="font-size:1.15rem;font-weight:600;color:#0F3E03">Praat met een adviseur: <a href="tel:+3281280117" style="color:#0F3E03;text-decoration:none">+32 81 28 01 17</a></span>
+<a class="mk-lnk" href="https://calendly.com/contact-medispring/groepsdemo-medispring-physio">Een vraag-en-antwoordsessie boeken</a>
 </div>
 </div>
 </div></section>
@@ -418,7 +418,7 @@ html:not([lang^="nl"]) body:not(.editor_enable) .s_embed_code:has(#mk-nl){displa
 <section id="ms-faq-nl" class="mk-mist"><div class="mk-wrap mk-sec mk-col" style="gap:24px">
 <h2 class="mk-h2" style="color:#0F3E03">Veelgestelde vragen</h2>
 <div class="mk-faq" style="max-width:820px;border-top:1px solid #EFEFEF">
-<details open><summary>Is er momenteel een actie?</summary><p>Ja, afhankelijk van uw situatie. Hebt u nog geen EMD? Dan krijgt u tot begin januari 2027 met de Medispring Physio-actie 2 maanden gratis bij een verbintenis van 1 jaar. Bent u nog gebonden aan een andere leverancier? Dan overbrugt Medispring de resterende looptijd van uw contract: tot 9 maanden gratis.</p></details>
+<details open><summary>Is er momenteel een actie?</summary><p>Ja, afhankelijk van uw situatie. <span data-offre>Hebt u nog geen EMD? Tot 1 januari 2027 krijgt u met Medispring Physio 2 maanden gratis als u zich voor een jaar verbindt. </span>Bent u nog gebonden aan een ander EMD? Medispring neemt de resterende looptijd van uw contract voor zijn rekening, met maximaal 9 maanden gratis.</p></details>
 <details><summary>Wat gebeurt er met mijn huidige contract?</summary><p>Medispring overbrugt de resterende looptijd van uw huidige contract. U betaalt niet dubbel en krijgt tot 9 maanden gratis.</p></details>
 <details><summary>Is de overzetting van mijn gegevens inbegrepen?</summary><p>Ja, zonder extra kosten.</p></details>
 <details><summary>Wat is het verschil tussen eAttest en eFact?</summary><p>eAttest: de patiënt betaalt het volledige honorarium, zonder derdebetalersregeling. eFact: u past de derdebetalersregeling toe. In beide gevallen gebeurt de verzending naar het ziekenfonds elektronisch.</p></details>
@@ -437,11 +437,23 @@ html:not([lang^="nl"]) body:not(.editor_enable) .s_embed_code:has(#mk-nl){displa
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px">
 <a class="mk-btn mk-btn-s" href="#ms-devis-nl">Mijn prijsvoorstel berekenen</a>
 <a class="mk-btn mk-btn-ow" href="#ms-hero-form-nl">Een demo boeken</a>
-<a href="tel:+3278077050" style="font-size:1.15rem;font-weight:600;color:#fff;text-decoration:none">+32 78 077 050</a>
+<a href="tel:+3281280117" style="font-size:1.15rem;font-weight:600;color:#fff;text-decoration:none">+32 81 28 01 17</a>
 </div>
 </div></section>
 
 </div>
+
+<!-- Offre « 2 mois offerts » : masquée automatiquement après son dernier jour
+     (bandeau du hero, bandeau du calculateur et phrase de la FAQ, marqués data-offre).
+     Pour prolonger l'offre : changer la date ci-dessous (AAAA-MM-JJ, dernier jour inclus)
+     et la date écrite dans ces 3 textes. -->
+<script>
+(function(){
+  var DERNIER_JOUR_OFFRE='2027-01-01';
+  if(new Date()<=new Date(DERNIER_JOUR_OFFRE+'T23:59:59'))return;
+  Array.prototype.forEach.call(document.querySelectorAll('#mk-nl [data-offre]'),function(el){el.style.display='none';});
+})();
+</script>
 
 <!-- Titre de la piste dans le CRM : ajoute le nom du kiné devant le type de demande
      (ex. « Florence Seghin – Kiné : être rappelé »), pour que les commerciaux le voient

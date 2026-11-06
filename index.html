@@ -29,6 +29,9 @@ body{margin:0;background:#fff}
     chaque modification de la page en FR, ouvrir la version NL (/nl_BE/…),
     cliquer sur Traduire puis Sauvegarder, sans rien changer. Sinon les
     visiteurs NL voient l'ancienne version de la page.
+ 5. Offre « 2 mois offerts » : elle disparaît toute seule de la page après
+    le 1er janvier 2027.
+    Pour changer la date : script « Offre » en bas du fichier.
 
  Le menu et le pied de page restent ceux d'Odoo.
  Les polices ne sont pas chargées ici : les titres prennent Omnes Pro
@@ -189,7 +192,7 @@ html:not([lang^="fr"]) body:not(.editor_enable) .s_embed_code:has(#mk-fr){displa
 <div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span><strong>Changez de DMI sans payer deux fois</strong>&nbsp;: jusqu'à 9 mois offerts</span></div>
 <div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span><strong>Migration incluse</strong>, sans frais supplémentaires</span></div>
 </div>
-<div class="mk-promo">Pas encore de DMI&nbsp;? <strong>Offre Medispring Physio</strong>&nbsp;: 2 mois offerts pour un engagement d'un an, jusqu'au début janvier 2027.</div>
+<div class="mk-promo" data-offre>Pas encore de DMI&nbsp;? <strong>Offre Medispring Physio</strong>&nbsp;: 2 mois offerts pour un engagement d'un an, jusqu'au 1er janvier 2027.</div>
 <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:4px">
 <a class="mk-btn mk-btn-s" href="https://form.typeform.com/to/IPrHTYXW" target="_blank" rel="noopener">Je calcule mon devis en 30 secondes</a>
 </div>
@@ -286,7 +289,7 @@ html:not([lang^="fr"]) body:not(.editor_enable) .s_embed_code:has(#mk-fr){displa
 <h2 class="mk-h2" style="color:#fff;max-width:760px">Medispring Physio en vidéo</h2>
 <p style="font-size:1.1rem;color:rgba(255,255,255,.86);max-width:620px">Découvrez le logiciel en action&nbsp;: suivi des séances, facturation électronique et agenda.</p>
 <div class="mk-video">
-<iframe src="https://www.youtube-nocookie.com/embed/CEXkGGF7M9s?rel=0" title="Découvrez Medispring Physio, le logiciel de kinésithérapie qui simplifie votre quotidien" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+<iframe src="https://www.youtube-nocookie.com/embed/__aBv8KaJEE?rel=0" title="Medispring Physio – vidéo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
 </div>
 </div></section>
 
@@ -364,7 +367,7 @@ html:not([lang^="fr"]) body:not(.editor_enable) .s_embed_code:has(#mk-fr){displa
 <div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span>Licence tout inclus, support et migration compris</span></div>
 <div class="mk-ck"><img src="images/check.svg" alt="" width="26" height="26"><span>Moins de 30 secondes, sans changer de site</span></div>
 </div>
-<div class="mk-offer">Pas encore de DMI&nbsp;? <strong>Offre Medispring Physio&nbsp;: 2 mois offerts</strong> pour un engagement d'un an, jusqu'au début janvier 2027. Le calculateur affiche le prix hors promotion.</div>
+<div class="mk-offer" data-offre>Pas encore de DMI&nbsp;? <strong>Offre Medispring Physio&nbsp;: 2 mois offerts</strong> pour un engagement d'un an, jusqu'au 1er janvier 2027. Le calculateur affiche le prix hors promotion.</div>
 <div style="width:100%">
 <!-- Calculateur Typeform « Calculateur web Medispring - kinés » (intégration live : le contenu et la hauteur se règlent dans Typeform). -->
 <div data-tf-live="01M61MKV6B1GR8RPV534DY6ZXB" style="width:100%"></div>
@@ -425,7 +428,7 @@ html:not([lang^="fr"]) body:not(.editor_enable) .s_embed_code:has(#mk-fr){displa
 <section id="ms-faq" class="mk-mist"><div class="mk-wrap mk-sec mk-col" style="gap:24px">
 <h2 class="mk-h2" style="color:#0F3E03">Questions fréquentes</h2>
 <div class="mk-faq" style="max-width:820px;border-top:1px solid #EFEFEF">
-<details open><summary>Y a-t-il une offre en ce moment&nbsp;?</summary><p>Oui, selon votre situation. Vous n'avez pas encore de DMI&nbsp;? Jusqu'au début janvier 2027, l'offre Medispring Physio vous donne 2 mois offerts pour un engagement d'un an. Vous êtes encore lié à un autre DMI&nbsp;? Medispring couvre la période restante de votre contrat, jusqu'à 9 mois offerts.</p></details>
+<details open><summary>Y a-t-il une offre en ce moment&nbsp;?</summary><p>Oui, selon votre situation. <span data-offre>Vous n'avez pas encore de DMI&nbsp;? Jusqu'au 1er janvier 2027, l'offre Medispring Physio vous donne 2 mois offerts pour un engagement d'un an. </span>Vous êtes encore lié à un autre DMI&nbsp;? Medispring couvre la période restante de votre contrat, jusqu'à 9 mois offerts.</p></details>
 <details><summary>Que se passe-t-il avec mon contrat actuel&nbsp;?</summary><p>Medispring couvre la période restante de votre contrat actuel. Pas de double facturation, jusqu'à 9 mois offerts.</p></details>
 <details><summary>La migration de mes données est-elle incluse&nbsp;?</summary><p>Oui, sans frais supplémentaires.</p></details>
 <details><summary>Quelle différence entre eAttest et eFact&nbsp;?</summary><p>eAttest&nbsp;: le patient paie la totalité des honoraires, hors tiers payant. eFact&nbsp;: vous appliquez le tiers payant. Dans les deux cas, l'envoi à la mutualité est électronique.</p></details>
@@ -449,6 +452,18 @@ html:not([lang^="fr"]) body:not(.editor_enable) .s_embed_code:has(#mk-fr){displa
 </div></section>
 
 </div>
+
+<!-- Offre « 2 mois offerts » : masquée automatiquement après son dernier jour
+     (bandeau du hero, bandeau du calculateur et phrase de la FAQ, marqués data-offre).
+     Pour prolonger l'offre : changer la date ci-dessous (AAAA-MM-JJ, dernier jour inclus)
+     et la date écrite dans ces 3 textes. -->
+<script>
+(function(){
+  var DERNIER_JOUR_OFFRE='2027-01-01';
+  if(new Date()<=new Date(DERNIER_JOUR_OFFRE+'T23:59:59'))return;
+  Array.prototype.forEach.call(document.querySelectorAll('#mk-fr [data-offre]'),function(el){el.style.display='none';});
+})();
+</script>
 
 <!-- Titre de la piste dans le CRM : ajoute le nom du kiné devant le type de demande
      (ex. « Florence Seghin – Kiné : être rappelé »), pour que les commerciaux le voient
