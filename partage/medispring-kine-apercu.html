@@ -102,7 +102,7 @@ html:not([lang^="fr"]) body:not(.editor_enable) .s_embed_code:has(#mk-fr){displa
 .mk-rp input:focus-visible + span{outline:2px solid #0F3E03;outline-offset:2px}
 .mk-submit a{width:100%}
 .mk-note{font-size:.8rem;color:rgba(33,37,41,.55);text-align:center}
-.mk-done{display:flex;flex-direction:column;gap:10px;background:#FBFFF1;border:1px solid #D5EC7B;border-radius:.4rem;padding:24px}
+.mk-done{display:flex;flex-direction:column;gap:10px;color:#212529;background:#FBFFF1;border:1px solid #D5EC7B;border-radius:.4rem;padding:24px}
 .mk-done b{font-family:'omnes-pro','Omnes Pro','Asap',sans-serif;font-size:1.3rem;color:#0F3E03}
 
 /* ---------- cartes ---------- */
@@ -384,9 +384,9 @@ html:not([lang^="fr"]) body:not(.editor_enable) .s_embed_code:has(#mk-fr){displa
 <h2 class="mk-h2" style="color:#fff;font-size:2.25rem">L’eSanté du kiné, <span class="mk-lm">simplement.</span></h2>
 <p style="font-size:1.1rem;color:rgba(255,255,255,.86);max-width:560px">Le guide complet du kiné pour comprendre et préparer les changements de 2027.</p>
 </div>
-<div style="flex:1 1 360px;min-width:0">
-<!-- FORMULAIRE GUIDE « CAP SUR 2027 » : mêmes valeurs que le formulaire existant de la page (titre « Cap sur 2027 ebook », redirection /merci-guide-kine-2027). À TESTER. -->
-<form action="/website/form/" method="post" enctype="multipart/form-data" class="s_website_form o_mark_required" data-mark="*" data-pre-fill="true" data-model_name="crm.lead" data-success-mode="redirect" data-success-page="/merci-guide-kine-2027">
+<div id="ms-guide-form" style="flex:1 1 360px;min-width:0">
+<!-- FORMULAIRE GUIDE « CAP SUR 2027 » : mêmes valeurs que le formulaire existant de la page (titre « Cap sur 2027 ebook »). Après l'envoi : message avec le bouton de téléchargement du PDF. -->
+<form action="/website/form/" method="post" enctype="multipart/form-data" class="s_website_form o_mark_required" data-mark="*" data-pre-fill="true" data-model_name="crm.lead" data-success-mode="message">
 <div class="s_website_form_rows mk-rows">
 <div class="s_website_form_field s_website_form_required mk-fld" data-type="email" data-name="Field">
 <label class="s_website_form_label" for="mk-guide-mail" style="color:#fff"><span class="s_website_form_label_content">E-mail</span><span class="s_website_form_mark"> *</span></label>
@@ -404,6 +404,9 @@ html:not([lang^="fr"]) body:not(.editor_enable) .s_embed_code:has(#mk-fr){displa
 <p style="font-size:.8rem;color:rgba(255,255,255,.65)">En envoyant ce formulaire, vous acceptez notre <a href="/politique-de-vie-privee" style="color:#D8ED84">politique de vie privée</a>.</p>
 </div>
 </form>
+<!-- Message affiché par Odoo à la place du formulaire du guide après l'envoi, avec le PDF à télécharger
+     (même fichier que le bouton de la page /merci-guide-kine-2027). -->
+<div class="s_website_form_end_message d-none"><div class="mk-done"><b>Merci&nbsp;! Votre guide est prêt.</b><p>Une question&nbsp;? Un conseiller Medispring vous répond au <a href="tel:+3281280117" style="color:#0F3E03;font-weight:600">+32 81 28 01 17</a>.</p><a class="mk-btn mk-btn-p" href="/web/content/81222?unique=772d6bb0688e3c7084214ceadf9faa6f4ee9ba0c&amp;download=true" style="align-self:flex-start">Télécharger le guide «&nbsp;Cap sur 2027&nbsp;» (PDF)</a></div></div>
 </div>
 </div></section>
 
@@ -540,7 +543,8 @@ html:not([lang^="fr"]) body:not(.editor_enable) .s_embed_code:has(#mk-fr){displa
    1. Envoyer chacun des 2 formulaires avec un faux e-mail.
    2. Vérifier qu'un lead arrive dans le CRM, avec la bonne équipe
       et le bon commercial. Hero : le message de confirmation remplace
-      le formulaire. Guide : redirection vers /merci-guide-kine-2027.
+      le formulaire. Guide : le message avec le bouton
+      de téléchargement du PDF remplace le formulaire.
    3. Plausible > Temps réel : vérifier que l'événement « Lead kiné »
       apparaît après l'envoi du formulaire du hero.
    4. Si rien n'arrive : remplacer le <form> par un bloc natif « Formulaire »

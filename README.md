@@ -44,7 +44,7 @@ Deux options pour relier le formulaire du hero au CRM Odoo :
 
 Le calculateur de prix est le Typeform « Calculateur web Medispring - kinés » (intégration live) ; ses réponses arrivent par e-mail dans le CRM. Le guide « Cap sur 2027 » reprend le formulaire e-mail existant. La section vidéo intègre la vidéo YouTube « Découvrez Medispring Physio » (FR ; la version NL utilise provisoirement « Eén patiëntendossier, één multidisciplinair team ») (lecteur youtube-nocookie, sans cookie avant la lecture).
 
-Formulaire du hero : après l'envoi, Odoo remplace le formulaire par un message de confirmation (pas de page de remerciement à créer). Formulaire du guide : redirection vers la page existante `/merci-guide-kine-2027`.
+Formulaire du hero : après l'envoi, Odoo remplace le formulaire par un message de confirmation (pas de page de remerciement à créer). Formulaire du guide : même principe, le message contient le bouton de téléchargement du PDF (FR « Cap sur 2027 », NL « Richting 2027 », les mêmes fichiers que sur `/merci-guide-kine-2027`).
 
 ## Français et néerlandais
 
