@@ -21,6 +21,9 @@
  5. Offre « 2 mois offerts » : elle disparaît toute seule de la page après
     le 1er janvier 2027.
     Pour changer la date : script « Offre » en bas du fichier.
+ 6. Boutons « Réserver une démo » (5) : ils ouvrent le Calendly des démos
+    collectives. Pour passer aux Rendez-vous d'Odoo, remplacer le lien
+    https://calendly.com/contact-medispring/demos-medispring-physio partout.
 
  Le menu et le pied de page restent ceux d'Odoo.
  Les polices ne sont pas chargées ici : les titres prennent Omnes Pro
@@ -184,6 +187,7 @@ html:not([lang^="fr"]) body:not(.editor_enable) .s_embed_code:has(#mk-fr){displa
 <div class="mk-promo" data-offre>Pas encore de DMI&nbsp;? <strong>Offre Medispring Physio</strong>&nbsp;: 2 mois offerts pour un engagement d'un an, jusqu'au 1er janvier 2027.</div>
 <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:4px">
 <a class="mk-btn mk-btn-s" href="https://form.typeform.com/to/IPrHTYXW" target="_blank" rel="noopener">Je calcule mon devis en 30 secondes</a>
+<a class="mk-btn mk-btn-ow" href="https://calendly.com/contact-medispring/demos-medispring-physio" target="_blank" rel="noopener" data-demo>Réserver une démo</a>
 </div>
 <div style="font-size:.95rem;color:rgba(255,255,255,.8)">Ou appelez-nous&nbsp;: <a href="tel:+3281280117" style="color:#fff;font-weight:700;text-decoration:none">+32 81 28 01 17</a> · lun–ven, 8h30–12h30 et 13h15–17h30</div>
 </div>
@@ -193,15 +197,10 @@ html:not([lang^="fr"]) body:not(.editor_enable) .s_embed_code:has(#mk-fr){displa
      un bloc natif « Formulaire » d'Odoo dans une colonne à droite du hero. -->
 <div id="ms-hero-form" class="mk-fcard mk-col" style="flex:0 1 440px;min-width:0;width:100%;gap:16px">
 <h2>Parlez à un conseiller</h2>
-<p style="font-size:.95rem;color:rgba(33,37,41,.7)">Laissez vos coordonnées. Un conseiller Medispring vous rappelle ou planifie votre démo.</p>
+<p style="font-size:.95rem;color:rgba(33,37,41,.7)">Laissez vos coordonnées. Un conseiller Medispring vous rappelle.</p>
 <form action="/website/form/" method="post" enctype="multipart/form-data" class="s_website_form o_mark_required" data-mark="*" data-pre-fill="true" data-model_name="crm.lead" data-success-mode="message">
 <div class="s_website_form_rows mk-rows">
-<div class="s_website_form_field mk-fld" data-type="char" data-name="Field">
-<div class="mk-rp s_website_form_multiple" data-name="name" data-display="horizontal">
-<label><input type="radio" class="s_website_form_input" name="name" value="Kiné : être rappelé" checked required><span>Être rappelé</span></label>
-<label><input type="radio" class="s_website_form_input" name="name" value="Kiné : réserver une démo"><span>Réserver une démo</span></label>
-</div>
-</div>
+<input type="hidden" name="name" value="Kiné : être rappelé" class="s_website_form_input"><!-- titre de la piste dans le CRM (le nom du kiné est ajouté devant à l'envoi) -->
 <div class="s_website_form_field s_website_form_required mk-fld" data-type="char" data-name="Field">
 <label class="s_website_form_label" for="mk-nom"><span class="s_website_form_label_content">Nom et prénom</span><span class="s_website_form_mark"> *</span></label>
 <input id="mk-nom" class="s_website_form_input" type="text" name="contact_name" required>
@@ -269,7 +268,7 @@ html:not([lang^="fr"]) body:not(.editor_enable) .s_embed_code:has(#mk-fr){displa
 <div class="mk-qcard"><svg viewBox="0 0 108 20" width="86" height="16" role="img" aria-label="5 étoiles sur 5" style="display:block"><path transform="translate(0 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(22 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(44 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(66 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(88 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/></svg><p>«&nbsp;J’aime l’idée d’une coopérative. On sent que les médecins sont entendus dans leurs demandes d’améliorations, et que le logiciel continue de s’adapter à nos besoins.&nbsp;»</p><div class="mk-who"><img src="/web/image/88999-d4cd986d/avatar.svg" alt="" width="48" height="48"><div><b>Dr Ingrid Cohnen</b><span>Médecin généraliste</span></div></div></div>
 <div class="mk-qcard"><svg viewBox="0 0 108 20" width="86" height="16" role="img" aria-label="4 étoiles sur 5" style="display:block"><path transform="translate(0 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(22 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(44 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(66 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="#F3CC00"/><path transform="translate(88 0)" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.2"/></svg><p>«&nbsp;Le logiciel est performant au quotidien, à la pointe des outils e-santé, il répond parfaitement à l’exigence et à la rigueur de notre pratique. Ce qui était une contrainte est devenu un confort de travail.&nbsp;»</p><div class="mk-who"><img src="/web/image/88999-d4cd986d/avatar.svg" alt="" width="48" height="48"><div><b>Dr Cédric De Roeck</b><span>Médecin généraliste</span></div></div></div>
 </div>
-<div><a class="mk-btn mk-btn-o" href="#ms-hero-form">Réserver une démo</a></div>
+<div><a class="mk-btn mk-btn-o" href="https://calendly.com/contact-medispring/demos-medispring-physio" target="_blank" rel="noopener" data-demo>Réserver une démo</a></div>
 </div></section>
 
 <!-- ===================== VIDÉO PRODUIT ===================== -->
@@ -312,7 +311,7 @@ html:not([lang^="fr"]) body:not(.editor_enable) .s_embed_code:has(#mk-fr){displa
 <div class="mk-ck"><img src="/web/image/88997-2a1961c7/check.svg" alt="" width="26" height="26"><span><strong>eAgreement intégré</strong>&nbsp;: vérification immédiate de l'assurabilité et des accords spécifiques en cours</span></div>
 <div class="mk-ck"><img src="/web/image/88997-2a1961c7/check.svg" alt="" width="26" height="26"><span>Moins d'erreurs, moins de refus ou de retards de remboursement</span></div>
 </div>
-<div><a class="mk-btn mk-btn-o" href="#ms-hero-form">Réserver une démo</a></div>
+<div><a class="mk-btn mk-btn-o" href="https://calendly.com/contact-medispring/demos-medispring-physio" target="_blank" rel="noopener" data-demo>Réserver une démo</a></div>
 </div>
 <div class="mk-imgp" style="flex:1 1 420px;min-width:0;display:flex;justify-content:flex-end"><img src="/web/image/88996-543ecf45/kine-factu.webp" alt="Une kinésithérapeute encode ses séances sur son ordinateur" width="451" height="418" loading="lazy"></div>
 </div>
@@ -343,7 +342,7 @@ html:not([lang^="fr"]) body:not(.editor_enable) .s_embed_code:has(#mk-fr){displa
 </div>
 <div class="mk-col" style="flex:1 1 260px;min-width:0;gap:14px;align-items:flex-start">
 <a class="mk-btn mk-btn-p" href="#ms-hero-form">Être contacté pour ma reprise</a>
-<a class="mk-lnk" href="#ms-hero-form">ou réserver une démo</a>
+<a class="mk-lnk" href="https://calendly.com/contact-medispring/demos-medispring-physio" target="_blank" rel="noopener" data-demo>ou réserver une démo</a>
 </div>
 </div>
 </div></section>
@@ -438,7 +437,7 @@ html:not([lang^="fr"]) body:not(.editor_enable) .s_embed_code:has(#mk-fr){displa
 <p style="font-size:1.15rem;color:rgba(255,255,255,.86);max-width:620px">Dossier patient, prescription, facturation et agenda réunis dans un seul outil, connecté à l'écosystème e-Santé belge.</p>
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px">
 <a class="mk-btn mk-btn-s" href="#ms-devis">Calculer mon devis</a>
-<a class="mk-btn mk-btn-ow" href="#ms-hero-form">Réserver une démo</a>
+<a class="mk-btn mk-btn-ow" href="https://calendly.com/contact-medispring/demos-medispring-physio" target="_blank" rel="noopener" data-demo>Réserver une démo</a>
 <a href="tel:+3281280117" style="font-size:1.15rem;font-weight:600;color:#fff;text-decoration:none">+32 81 28 01 17</a>
 </div>
 </div></section>
@@ -480,7 +479,9 @@ html:not([lang^="fr"]) body:not(.editor_enable) .s_embed_code:has(#mk-fr){displa
 
 <!-- Suivi Plausible : quand Odoo affiche le message de confirmation d'un formulaire,
      envoie l'événement « Lead kiné » (objectif à créer dans Plausible, type « Custom event »).
-     Détails envoyés : formulaire (conseiller / guide), demande (rappel / demo), langue. -->
+     Détails envoyés : formulaire (conseiller / guide), langue.
+     Clic sur un bouton « Réserver une démo » (Calendly, hors du site) : événement « Clic démo kiné »
+     (deuxième objectif à créer dans Plausible). -->
 <script>
 (function(){
   var root=document.getElementById('mk-fr');
@@ -491,10 +492,11 @@ html:not([lang^="fr"]) body:not(.editor_enable) .s_embed_code:has(#mk-fr){displa
       if(sent||msg.classList.contains('d-none'))return;
       sent=true;
       var props={formulaire:/hero-form/.test(box.id)?'conseiller':'guide',langue:'fr'};
-      var choix=box.querySelector('input[name="name"]:checked');
-      if(choix){props.demande=choix.value.indexOf('démo')>-1?'demo':'rappel';}
       if(typeof window.plausible==='function'){window.plausible('Lead kiné',{props:props});}
     }).observe(msg,{attributes:true,attributeFilter:['class']});
+  });
+  root.addEventListener('click',function(e){
+    if(e.target.closest('[data-demo]')&&typeof window.plausible==='function'){window.plausible('Clic démo kiné',{props:{langue:'fr'}});}
   });
 })();
 </script>

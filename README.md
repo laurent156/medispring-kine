@@ -48,11 +48,11 @@ Formulaire du hero : après l'envoi, Odoo remplace le formulaire par un message 
 
 ## Français et néerlandais
 
-Odoo ne traduit pas le contenu d'un bloc « Code intégré » : la page contient donc deux blocs, chacun visible dans une seule langue. Le masquage est dans le code (règle CSS sur la langue de la page, comme l'option Visibilité > Langues d'Odoo) ; en mode édition, les deux blocs restent visibles. Les ancres et les identifiants de la version NL finissent par `-nl` pour éviter les doublons. Les points marqués « NL À CONFIRMER » dans `kine-odoo-nl.html` attendent une réponse de Medispring (Typeform, lien Q&A, page de remerciement du guide, vidéo kiné NL). La vidéo NL est intégrée..
+Odoo ne traduit pas le contenu d'un bloc « Code intégré » : la page contient donc deux blocs, chacun visible dans une seule langue. Le masquage est dans le code (règle CSS sur la langue de la page, comme l'option Visibilité > Langues d'Odoo) ; en mode édition, les deux blocs restent visibles. Les ancres et les identifiants de la version NL finissent par `-nl` pour éviter les doublons.
 
 ## Suivi des conversions (Plausible)
 
-Le site utilise Plausible. Quand le message de confirmation d'un formulaire s'affiche, le code envoie l'événement **« Lead kiné »**, avec trois détails : `formulaire` (conseiller ou guide), `demande` (rappel ou demo) et `langue` (fr ou nl). Dans Plausible, créer un objectif de type *Custom event* nommé exactement `Lead kiné`. Pour filtrer par détail, les propriétés personnalisées doivent être disponibles dans l'abonnement Plausible. Le formulaire du guide redirige vers une page : tant qu'il n'est pas passé en message, on le suit par la visite de cette page.
+Le site utilise Plausible. Quand le message de confirmation d'un formulaire s'affiche, le code envoie l'événement **« Lead kiné »**, avec deux détails : `formulaire` (conseiller ou guide) et `langue` (fr ou nl). Les boutons « Réserver une démo » ouvrent Calendly, hors du site : un clic envoie l'événement **« Clic démo kiné »** (détail `langue`). Dans Plausible, créer deux objectifs de type *Custom event* nommés exactement `Lead kiné` et `Clic démo kiné`. Pour filtrer par détail, les propriétés personnalisées doivent être disponibles dans l'abonnement Plausible.
 
 ## Animations
 
